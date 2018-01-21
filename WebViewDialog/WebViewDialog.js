@@ -26,11 +26,11 @@ function Password(callback, head) {
     Password.layDlg.SetBackColor('#ffffff');
     Password.Dialog.AddLayout(Password.layDlg);
 
-    // Заголовок можно замментировать
-    //начало
+    // The title can be
+    // Start
     var title = app.CreateText(
         '<img src="Img/key.png"> <big><b>'+
-        (head || 'Регистрация:')+
+        (head || 'check in:')+
         '</b></big>', 0.9, -1, 'multiline,html,left');
     title.SetTextColor('#3098ba');
     title.SetMargins(0, 0.015, 0, 0.015);
@@ -38,7 +38,7 @@ function Password(callback, head) {
     var line = app.CreateText('', 0.95, 1.9/app.GetScreenHeight());
     line.SetBackColor('#3088aa');
     Password.layDlg.AddChild(line);
-    //конец заголовка
+    //end of title
 
     var web = app.CreateWebView();
     web.SetBackColor('#ffffff');
@@ -57,9 +57,9 @@ function Password(callback, head) {
         'background-color:#ffffff; background:#ffffff;' +
         'width: 100%; text-align: center; color: #555555;}' +
     ' .btn {width: 100%; color: #555555;} </style>' + 
-    "Логин:" +
+    "Login:" +
     "<h3><input type='text' id='login' class='log' autofocus></input></h3>" + 
-    "Пароль:" +
+    "Password:" +
     "<h3><input type='password' id='passw' class='psw' ></input></h3>" + 
     "<h3><button class='btn' onclick=myboo()>OK</button></h3>";
 

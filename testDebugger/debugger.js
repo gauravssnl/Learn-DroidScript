@@ -1,6 +1,6 @@
 
 
-//глушим дебаггер DroidScript'а:
+//dublish debugger DroidScript'a:
 app.SetOnError(function(e){});
 
 
@@ -10,14 +10,14 @@ window.onerror = function(err, file, line) {
 		setTimeout(__dialog.Dismiss, 200);
 		if (this.result) {
 			
-			//здесь прописать свой email:
+			//here to register your email::
 			var myEmail = 'myname@gmail.com';
 			
-			var headEmail = 'В программе "' 
+			var headEmail = 'In a programme "' 
 				+ app.GetAppName() 
 				+ '" v.' 
 				+ app.GetVersion() 
-				+ ' произошла ошибка';
+				+ ' An error has occurred';
 			app.SendMail( myEmail, headEmail, this.textError );
 		}
 		return;
@@ -32,8 +32,8 @@ window.onerror = function(err, file, line) {
 	title.SetTextColor('#3098ba');
 	title.SetMargins(0, 0.02, 0, 0.02);
 	layDlg.AddChild(title);
-	var txtBody = 'В программе "' + app.GetAppName() + '" произошла ошибка.';
-	txtBody += '\nОтправить отчет разработчику?';
+	var txtBody = 'In a programme "' + app.GetAppName() + '" An error has occurred.';
+	txtBody += '\nSend report to developer?';
 	var body = app.CreateText(txtBody.big(), 0.91, -1, 'multiline,html');
 	body.SetTextColor('#666666');
 	body.SetMargins(0.02, 0.04, 0.02, 0.08);
@@ -41,12 +41,12 @@ window.onerror = function(err, file, line) {
 	var layButtons = app.CreateLayout("linear", "horizontal,right" );
 	layButtons.SetMargins(0, 0, 0, 0.01);
 	layButtons.SetSize(0.9);
-	var btn = app.CreateButton('Нет'.big(), -1, -1, 'html');
+	var btn = app.CreateButton('No'.big(), -1, -1, 'html');
 	btn.SetBackColor('#00000000');
 	btn.SetTextColor('#3098ba');
 	btn.SetOnTouch( arguments.callee );
 	layButtons.AddChild(btn);
-	var btn = app.CreateButton('Отчет'.big(), -1, -1, 'html');
+	var btn = app.CreateButton('Report'.big(), -1, -1, 'html');
 	btn.textError = err + '\n' + file + '\n line: ' + line;
 	btn.SetBackColor('#00000000');
 	btn.SetTextColor('#3098ba');

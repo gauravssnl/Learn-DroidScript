@@ -7,12 +7,12 @@ function OnStart()
 	//Create a layout with objects vertically centered.
 	var lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
 
-	var txt = app.CreateText( "Тест дебаггера" );
+	var txt = app.CreateText( "Debugger test" );
 	txt.SetTextSize( 32 );
 	lay.AddChild( txt );
-	var btn = app.CreateButton('Иммитировать баг');
+	var btn = app.CreateButton('Imitate bug');
 
-	//иммитация бага:
+	//immigration bug:
 	btn.SetOnTouch(
 		function(){
 			var x=null; 

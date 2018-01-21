@@ -11,7 +11,7 @@ function OnStart () {
 }
 
 function createMenu () {
-	// Боковое меню.
+	// Sidebar.
 	layMenu = app.CreateLayout( "Linear", "VLeft,FillXY" );
 
 	layMenu.scrollers = [];

@@ -4,50 +4,50 @@ app.LoadScript('Progress.js');
 function OnStart() {
     var lay = app.CreateLayout("Linear", "Bottom FillXY");
     lay.SetBackColor("#ffffff");
-    var btn = app.CreateButton('Прогресс без отмены (на 5 сек.)', 0.8, 0.1, 'lego');
+    var btn = app.CreateButton('Progress without cancellation (5 sec.)', 0.8, 0.1, 'lego');
     btn.SetOnTouch(ExampleProgress);
     lay.AddChild(btn);
-    var btn = app.CreateButton('Прогресс без отмены с заголовком (на 5 сек.)', 0.8, 0.1, 'lego');
+    var btn = app.CreateButton('Progress without cancellation with title (5 sec.)', 0.8, 0.1, 'lego');
     btn.SetOnTouch(ExampleProgressHead);
     lay.AddChild(btn);
-    btn = app.CreateButton('Прогресс с отменой', 0.8, 0.1, 'lego');
+    btn = app.CreateButton('Progress with cancellation', 0.8, 0.1, 'lego');
     btn.SetOnTouch(ExampleProgressCancel);
     lay.AddChild(btn);
-    btn = app.CreateButton('Прогресс с отменой и заголовком', 0.8, 0.1, 'lego');
+    btn = app.CreateButton('Progress with cancellation and title', 0.8, 0.1, 'lego');
     btn.SetOnTouch(ExampleProgressHeadCancel);
     lay.AddChild(btn);
-    btn = app.CreateButton('Поменять стиль', 0.8, 0.1, 'lego');
+    btn = app.CreateButton('Change style', 0.8, 0.1, 'lego');
     btn.SetOnTouch(EditStyleProgress);
     lay.AddChild(btn);
     app.AddLayout(lay);
 }
 
 
-var timeout; //для демонстрации р-ты без кнопки отмены.
+var timeout; //To demonstrate the r-th without a cancel button.
 
 function ExampleProgress()
 {
     ShowProgress("ExampleProgress");
-    //поменяем текст через 2 сек:
-    setTimeout('UpdateTextProgress("Меняем текст ggdggsgsgs gssgxsgssgx ggcdgdgcgcstqqyhsgcg hsgdggcggc")', 2000);
-    //будет работать 5 сек:
+    //Let's change the text in 2 seconds:
+    setTimeout('UpdateTextProgress("Change the text ggdggsgsgs gssgxsgssgx ggcdgdgcgcstqqyhsgcg hsgdggcggc")', 2000);
+    //will work 5 seconds:
     timeout = setTimeout(function(){
             HideProgress();
             clearTimeout(timeout);
-            app.ShowPopup('Время вышло.');
+            app.ShowPopup('Time is over');
         }, 5000);
 }
 
 function ExampleProgressHead()
 {
-    ShowProgress("ExampleProgress", "Заголовок");
-    //поменяем текст через 2 сек:
-    setTimeout('UpdateTextProgress("Меняем текст ggdggsgsgs gssgxsgssgx ggcdgdgcgcstqqyhsgcg hsgdggcggc")', 2000);
-    //будет работать 5 сек:
+    ShowProgress("ExampleProgress", "Header");
+    //Let's change the text in 2 seconds::
+    setTimeout('UpdateTextProgress("Change the text ggdggsgsgs gssgxsgssgx ggcdgdgcgcstqqyhsgcg hsgdggcggc")', 2000);
+    //will work 5 seconds:
     timeout = setTimeout(function(){
             HideProgress();
             clearTimeout(timeout);
-            app.ShowPopup('Время вышло.');
+            app.ShowPopup('Time is over.');
         }, 5000);
 }
 
@@ -55,20 +55,20 @@ function ExampleProgressHead()
 function ExampleProgressCancel()
 {
     ShowProgress("ExampleProgressCancel", Cancel);
-    //поменяем текст через 2 сек:
-    setTimeout('UpdateTextProgress("Меняем текст uusuaayxyxyxyyx uxuxycychhxhcg hxhxhhcgc hxhchcchc")', 2000);
+    //Let's change the text in 2 seconds:
+    setTimeout('UpdateTextProgress("Change the text uusuaayxyxyxyyx uxuxycychhxhcg hxhxhhcgc hxhchcchc")', 2000);
 }
 
 
 function ExampleProgressHeadCancel()
 {
-    ShowProgress("ExampleProgressCancel", 'Заголовок', Cancel);
-    //поменяем текст через 2 сек:
-    setTimeout('UpdateTextProgress("Меняем текст uusuaayxyxyxyyx uxuxycychhxhcg hxhxhhcgc hxhchcchc")', 2000);
+    ShowProgress("ExampleProgressCancel", 'Header', Cancel);
+    //Let's change the text in 2 seconds:
+    setTimeout('UpdateTextProgress("Change the text uusuaayxyxyxyyx uxuxycychhxhcg hxhxhhcgc hxhchcchc")', 2000);
 }
 
 
-//назначенная функция отмены:
+//assigned cancellation function:
 function Cancel()
 {
     app.ShowPopup('Progress cancel');

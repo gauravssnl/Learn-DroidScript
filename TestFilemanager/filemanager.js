@@ -61,7 +61,7 @@ function FileManager(callback, exts, path) {
         foo.obj.hist = [];
         if (path.length > 1) {
             var s = '/';
-            foo.obj.hist.push('Устройство');
+            foo.obj.hist.push('Device');
             var l = path.slice(1, -1).split('/');
             for (var k=0; k<l.length-1; k++) {
                 s += (l[k] + '/');
@@ -71,7 +71,7 @@ function FileManager(callback, exts, path) {
     }
     foo.obj.list_layouts.push(lay);
     var pth = path;
-    if (pth == '/') pth = 'Устройство';
+    if (pth == '/') pth = 'Device';
     var i = foo.obj.hist.indexOf(pth);
     if (~i) foo.obj.hist.splice(i, 1);
     foo.obj.hist.push(pth);
@@ -79,7 +79,7 @@ function FileManager(callback, exts, path) {
     foo.obj.args = [callback, exts, path];
     var list_dirs = [];
     var pth = foo.obj.args[2];
-    var title = (pth=='/' ? "Устройство" : pth);
+    var title = (pth=='/' ? "Device" : pth);
     lay.AddChild(app.CreateTitle(title, 'start'));
     var folds = [], files = [];
     var cmp = function(a, b) {
@@ -100,7 +100,7 @@ function FileManager(callback, exts, path) {
 
     var list = folds.concat(files);
     if (! list.length) {
-        var empty = app.CreateText('<big>Пусто</big>', 1, -1, 'html');
+        var empty = app.CreateText('<big>Empty</big>', 1, -1, 'html');
         empty.SetTextColor(TEXTCOLOR_FM);
         empty.SetPosition(0, 0.3);
         lay.AddChild(empty);
@@ -157,9 +157,9 @@ function HistFM() {
     this.SetScale(1, 1);
     var lst = FileManager.obj.hist.slice(0);
     for (var i=0; i<lst.length; i++) {
-        if (lst[i].replace(/^Устройство$/, '/') == FileManager.obj.args[2]) lst[i] = '✔ ' + lst[i];
+        if (lst[i].replace(/^Device$/, '/') == FileManager.obj.args[2]) lst[i] = '✔ ' + lst[i];
     }
-    var dlg = app.CreateListDialog('Переход:', lst);
+    var dlg = app.CreateListDialog('Transition:', lst);
     dlg.SetBackColor(BACKGROUND_FM);
     dlg.SetTextColor(TEXTCOLOR_FM);
     dlg.SetOnTouch(HistFM2);
@@ -167,7 +167,7 @@ function HistFM() {
 
 
 function HistFM2(path) {
-    FileManager.obj.args[2] = path.replace(/✔ /, '').replace(/^Устройство$/, '/');
+    FileManager.obj.args[2] = path.replace(/✔ /, '').replace(/^Device$/, '/');
     FileManager.obj.list_lists = [];
     window.FileManager.apply(null, FileManager.obj.args);
     while (FileManager.obj.list_layouts.length-1) 
