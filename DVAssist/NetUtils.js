@@ -64,10 +64,10 @@ function auth( username, password )
     HTTP_REQUEST.send( constructRequestString() );
     resp = HTTP_REQUEST.responseText;
     for( s in [
-        "Доброе утро,  <a href='/0/name/",
-        "Добрый день,  <a href='/0/name/",
-        "Добрый вечер,  <a href='/0/name/",
-        "Доброй ночи,  <a href='/0/name/"] )
+        "Good morning,  <a href='/0/name/",
+        "Good afternoon,  <a href='/0/name/",
+        "Good evening  <a href='/0/name/",
+        " Goodnight <a href='/0/name/"] )
     {
         if( ~resp.indexOf( s ) )
         {

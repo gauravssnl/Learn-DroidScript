@@ -27,7 +27,7 @@ function OnStart()
     settings = loadSettings();
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-    btn0= app.CreateButton( "Перейти в тему", 0.6, -1, "Custom" );
+    btn0= app.CreateButton( "Go to topic", 0.6, -1, "Custom" );
     btn0.SetStyle( "#ffa000", "#333300", 10 );
     btn0.SetTextShadow( 2, 0, 1, "#550000" );
     btn0.SetMargins( 0, 0, 0, 0 );
@@ -35,34 +35,34 @@ function OnStart()
     btn0.SetOnTouch( btn_OnDV);
 
     login_name = app.CreateTextEdit( settings.login_name, 0.6, 0.1 );
-    login_name.SetHint( "Имя пользователя" );
+    login_name.SetHint( "Username" );
     login_name.SetMargins( 0, 0.05, 0, 0 );
     login_name.SetTextSize( 22 );
     if( settings.login_name == "" )
         lay.AddChild( login_name );
 
     login_password = app.CreateTextEdit ( settings.login_password, 0.6, 0.1 );
-    login_password.SetHint( "Пароль" );
+    login_password.SetHint( "Password" );
     login_password.SetMargins( 0, 0, 0, 0 );
     login_password.SetTextSize( 22 );
     if( settings.login_password == "" )
         lay.AddChild( login_password );
 
-    btn1 = app.CreateButton( "Логин", 0.6, -1, "Custom" );
+    btn1 = app.CreateButton( "Login", 0.6, -1, "Custom" );
     btn1.SetStyle( "#00a0ff", "#003333", 10 );
     btn1.SetTextShadow( 2, 0, 1, "#550000" );
     btn1.SetMargins( 0, 0, 0, 0 );
     lay.AddChild( btn1 );
     btn1.SetOnTouch( btn_OnLogin);
     
-    btn2 = app.CreateButton( "Запуск сервиса", 0.6, -1, "Custom" );
+    btn2 = app.CreateButton( "Starting the service", 0.6, -1, "Custom" );
     btn2.SetStyle( "#ffa000", "#333300", 10 );
     btn2.SetTextShadow( 2, 0, 1, "#550000" );
     btn2.SetMargins( 0, 0, 0, 0 );
     lay.AddChild( btn2 );
     btn2.SetOnTouch( btn_OnStart);
     
-    btn3 = app.CreateButton( "Остановка сервиса", 0.6, -1, "Custom" );
+    btn3 = app.CreateButton( "Stop service", 0.6, -1, "Custom" );
     btn3.SetStyle( "#00a0ff", "#003333", 10 );
     btn3.SetTextShadow( 2, 0, 1, "#550000" );
     btn3.SetMargins( 0, 0, 0, 0 );
@@ -74,7 +74,7 @@ function OnStart()
     svc = app.CreateService( "this", "this", OnServiceReady );
     svc.SetOnMessage( OnServiceMessage );
 
-    autoboot = app.CreateCheckBox( "Автостарт сервиса" );
+    autoboot = app.CreateCheckBox( "Autostart service" );
     autoboot.SetMargins( 0, 0.02, 0, 0 );
     autoboot.SetOnTouch( btn_OnAutoboot );
     autoboot.SetChecked( settings.autoboot );
@@ -95,7 +95,7 @@ function OnStart()
 
 function OnServiceReady()
 {
-    app.ShowPopup( "Сервис готовится" );
+    app.ShowPopup( "Service is being prepared" );
 };
 
 function OnServiceMessage( msg )
@@ -123,14 +123,14 @@ function btn_OnLogin()
 {
     if( LOGGED_IN )
         return;
-    app.ShowProgress( "Авторизация" );
+    app.ShowProgress( "Authorization" );
     try
     {
         var authCode = auth( login_name.GetText(), login_password.GetText() );
     }
     catch( err )
     {
-        app.ShowPopup( "Ошибка сети\n" + err.message );
+        app.ShowPopup( "Network error\n" + err.message );
         app.HideProgress();
         return;
     };
@@ -146,7 +146,7 @@ function btn_OnLogin()
     else
     {
         app.HideProgress();
-        app.ShowPopup( "Попробуйте еще раз. Возможно, Вы ввели неверные имя пользователя и(или) пароль" );
+        app.ShowPopup( "Try again. You may have entered an incorrect username and / or password" );
     };
 };
 
@@ -155,12 +155,12 @@ function btn_OnAutoboot( isChecked )
     if( isChecked === true )
     {
         app.SetAutoBoot( "Service" );
-         app.ShowPopup( "Сервис успешно добавлен в автозагрузку" );
+         app.ShowPopup( "Service successfully added to startup" );
     }
     else
     {
         app.SetAutoBoot( "none" );
-        app.ShowPopup( "Сервис успешно удален из автозагрузки" );
+        app.ShowPopup( "Service successfully deleted from startup" );
     };
     localStoreSettings( settings );
 };
@@ -177,5 +177,5 @@ function btn_OnStart()
     if( LOGGED_IN )
         svc.SendMessage( "start" )
     else
-        app.ShowPopup( "Пожалуйста, авторизуйтесь" );
+        app.ShowPopup( "Please log in" );
 };
