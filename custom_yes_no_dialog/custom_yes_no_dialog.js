@@ -9,19 +9,19 @@
     function OnBack()
     {              
         //Create dialog window.
-        dlgExit = app.CreateDialog( "закрыть?" );
+        dlgExit = app.CreateDialog( "Close Up?" );
        
         //Create a layout for dialog.
         layDlg = app.CreateLayout( "Linear", "Horizontal,FillXY" );
         layDlg.SetPadding( 0.02, 0.02, 0.02, 0.02 );
         dlgExit.AddLayout( layDlg );
    
-        var btnYes = app.CreateButton("[fa-check-circle] да", 0.3, -1, "FontAwesome");
+        var btnYes = app.CreateButton("[fa-check-circle] Yes", 0.3, -1, "FontAwesome");
         btnYes.SetTextSize( 24 );
         btnYes.SetOnTouch( btnYes_OnTouch );
         layDlg.AddChild( btnYes );
        
-        var btnNo = app.CreateButton("[fa-times-circle] нет", 0.3, -1, "FontAwesome");
+        var btnNo = app.CreateButton("[fa-times-circle] No", 0.3, -1, "FontAwesome");
         btnNo.SetOnTouch( btnNo_OnTouch );
         btnNo.SetTextSize( 24 );
         layDlg.AddChild( btnNo );

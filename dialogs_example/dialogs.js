@@ -42,7 +42,7 @@ function MultiSelectionList(callback, list, title, list_indexes, text_btn_ok)
         } catch (er) {};
         return;
     }
-    title = typeof title == 'string' && title || 'Выбор:';
+    title = typeof title == 'string' && title || 'Selection:';
     text_btn_ok = typeof text_btn_ok == 'string' && text_btn_ok || 'OK';
     list_indexes = typeof list_indexes == 'object' && list_indexes.indexOf && list_indexes || [];
     if (typeof list == 'string') list = list.split(',');
@@ -135,7 +135,7 @@ function SelectionList(callback, list, title, index, text_btn_ok)
         } catch (er) {};
         return;
     }
-    title = typeof title == 'string' && title || 'Выбор:';
+    title = typeof title == 'string' && title || 'Selection:';
     text_btn_ok = typeof text_btn_ok == 'string' && text_btn_ok || 'OK';
     index = typeof index == 'number' && index || 0;
     if (typeof list == 'string') list = list.split(',');
@@ -318,9 +318,9 @@ function YesNoDialog(callback, body, head, text_btn_ok, text_btn_no, left) {
             return String(str).replace(/^ /gm, '&#160;').replace(/\n/g, '<br>');
         }
         var line, btn;
-        var text_btn_ok = text_btn_ok || 'Да';
-        var text_btn_no = text_btn_no || 'Нет';
-        var head = head || 'Вопрос:'; 
+        var text_btn_ok = text_btn_ok || 'Yes';
+        var text_btn_no = text_btn_no || 'No';
+        var head = head || 'Question:'; 
         var L =  app.CreateLayout("linear");
         L.SetVisibility('Hide');
         app.AddLayout(L);

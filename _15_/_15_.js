@@ -3,13 +3,13 @@ var WIDTH = app.GetDisplayWidth();
 var HEIGHT = app.GetDisplayHeight();
 
 
-// главный layout.
+// main layout.
 var lay = app.CreateLayout('linear', 'FillXY, bottom');
 lay.SetBackGradient.apply(lay, Gradient);
 app.AddLayout(lay);
 
 
-// для отладки.
+// for debugging.
 function print() 
 {
     var args = [], i;
@@ -18,7 +18,7 @@ function print() 
     alert(args.join('\n'));
 }
 
-// рандомно перемешивает список.
+// randomly mixes the list.
 Array.prototype.shuffle = function()
 {
     var i = this.length, a, b;
@@ -30,14 +30,14 @@ Array.prototype.shuffle = function()
 }
 
 
-//  возвращает копию списка.
+// returns a copy of the list.
 Array.prototype.copy = function() 
 {
     return JSON.parse(JSON.stringify(this));
 }
 
 
-//yes-no-dialog, вызов ф-ции.
+// yes-no-dialog, call a function.
 function ynd(obj) 
 {
     if (!obj)
@@ -51,7 +51,7 @@ function ynd(obj)
     app.RemoveLayout(layDlg);
 }
 
-// в случае отмены диалога касанием экрана
+// if the dialog is canceled by touching the screen
 function dlgCancel() {
     ynd(YesNoDialog.obj)
 }
@@ -59,9 +59,9 @@ function dlgCancel() {
 
 //yes-no-dialog.
 function YesNoDialog(func, query, title, yes, no) {
-    var yes = yes ? yes : 'Да';
-    var no = no ? no : 'Нет';
-    var title = title ? title : 'Вопрос:';
+    var yes = yes ? yes : 'Yes';
+    var no = no ? no : 'No';
+    var title = title ? title : 'Question:';
     Dialog = app.CreateDialog(title);
     layDlg = app.CreateLayout("linear", "vertical,fillxy" );
     layDlg.SetBackGradient.apply(layDlg, Gradient);
@@ -99,7 +99,7 @@ function YesNoDialog(func, query, title, yes, no) {
 }
 
 
-// возвращает рандомный список камней (решаемый вариант).
+// returns a random list of stones (the option to be solved).
 function createPlayList()
 {
     var i;
@@ -168,7 +168,7 @@ function Start(start)
 }
 
 
-//ходим
+// go
 function btnsMove()
 {
     var isMove = false, num = +this.GetText(), x, y, x1, y1, i;
@@ -224,7 +224,7 @@ function Exit(yn)
 
 function OnBack()
 {
-    YesNoDialog(Exit, 'Прекратить игру и выйти?', 'Выход:');
+    YesNoDialog(Exit, 'Stop the game and get out?',  'Exit:');
 }
 
 

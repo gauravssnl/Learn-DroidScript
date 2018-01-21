@@ -18,23 +18,23 @@ function OnStart(){
 
 
 function ShowAlert() {
-    Alert(Alert.toString(), '<img src="Img/alert.png"> Демонстрация Alert', null, true);
+    Alert(Alert.toString(), '<img src="Img/alert.png"> Demonstration Alert', null, true);
 }
 
 function ShowYesNoDialog() {
-    YesNoDialog(resultYesNoDialog, YesNoDialog.toString(), 'Демонстрация YesNoDialog', null, null, true)
+    YesNoDialog(resultYesNoDialog, YesNoDialog.toString(), 'Demonstration YesNoDialog', null, null, true)
 }
 
 function ShowListbox() {
-    Listbox(resultListbox, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), 'Заголовок Listbox');
+    Listbox(resultListbox, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), 'Header Listbox');
 }
 
 function ShowSelectionList() {
-    SelectionList(resultSelectionList, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), '<img src="Img/alert.png"> Заголовок SelectionList', 3, 'ОК');
+    SelectionList(resultSelectionList, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), '<img src="Img/alert.png"> Header SelectionList', 3, 'ОК');
 }
 
 function ShowMultiSelectionList() {
-    MultiSelectionList(resultMultiSelectionList, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), 'Заголовок MultiSelectionList', [6, 3, 1], 'Готово');
+    MultiSelectionList(resultMultiSelectionList, (function(){for(var i=0, l=[]; i<100; l.push('item #'+i), i++); return l}()), 'Header MultiSelectionList', [6, 3, 1], 'Done');
 }
 
 function ShowStyleDialogs() {

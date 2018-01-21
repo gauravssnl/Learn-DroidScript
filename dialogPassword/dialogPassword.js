@@ -9,7 +9,7 @@ function Password(callback, head) {
     else if (typeof callback != 'function') return;
     Password.listPos = [];
     Password.listText = [];
-    Password.Dialog = app.CreateDialog(head || 'Введите пароль:');
+    Password.Dialog = app.CreateDialog(head || 'Enter Password:');
     Password.layDlg = app.CreateLayout("linear", "vertical,fillxy" );
     Password.Dialog.AddLayout(Password.layDlg);
     Password.edt = app.CreateTextEdit("", 0.9, -1, 'singleline, nospell');
@@ -61,4 +61,4 @@ function dlgCancel()
 }
 
 
-Password(function(txt) {alert(txt); app.Exit()}, 'Заголовок');
+Password(function(txt) {alert(txt); app.Exit()}, 'Header');
