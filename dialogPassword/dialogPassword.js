@@ -1,0 +1,64 @@
+
+function Password(callback, head) {
+    if (typeof this.callback == 'function') 
+    {
+        this.SetBackColor('#4488aa');
+        dlgCancel();
+        return this.callback(Password.listText.join(''));
+    }
+    else if (typeof callback != 'function') return;
+    Password.listPos = [];
+    Password.listText = [];
+    Password.Dialog = app.CreateDialog(head || 'Введите пароль:');
+    Password.layDlg = app.CreateLayout("linear", "vertical,fillxy" );
+    Password.Dialog.AddLayout(Password.layDlg);
+    Password.edt = app.CreateTextEdit("", 0.9, -1, 'singleline, nospell');
+    Password.edt.SetOnChange(passOnChange);
+    var line = app.CreateText('', 1, 1.9/app.GetScreenHeight());
+    line.SetMargins(0, 0.02, 0, 0);
+    line.SetBackColor('#aaaaaa');
+    var btn = app.CreateButton("<big><b>OK</b></big>", 1, -1, 'html');
+    btn.SetBackColor('#00000000');
+    btn.SetOnTouch(Password);
+    btn.callback = callback;
+    Password.layDlg.AddChild(Password.edt);
+    Password.layDlg.AddChild(line);
+    Password.layDlg.AddChild(btn);
+    Password.Dialog.Show(); 
+    Password.Dialog.SetOnCancel(dlgCancel);
+}
+
+
+function passOnChange(a)
+{
+    var pos = this.GetCursorPos();
+    var text = this.GetText();
+    var shift = text.length - Password.listText.length;
+    if (!shift) return;
+    if (shift < 0)
+    {
+        Password.listText.splice(pos, -shift);
+    }
+    else
+    {
+        text = text.slice(pos-shift, pos);
+       Password.listText.splice.apply(Password.listText, [pos-shift, 0].concat(text.split('')));
+        Password.listPos.unshift([pos, shift]);
+        setTimeout(function(){
+                var lst = Password.listPos.pop();
+                var step = lst[1], start = lst[0] - step;
+                for (var i=0, t=''; i<step; i++, t+='*');
+                Password.edt.ReplaceText(t, start, start+step);
+            }, 500);
+    }
+}
+
+
+function dlgCancel() 
+{
+    Password.Dialog.Dismiss(); 
+    app.RemoveLayout(Password.layDlg);
+}
+
+
+Password(function(txt) {alert(txt); app.Exit()}, 'Заголовок');

@@ -1,0 +1,10 @@
+Used libraries in this application:
+
+* TestFilemanager (by Dmitry aka dimy44) taken from the forum of mobile coders at DimonVideo.ru (http://forum.dimonvideo.ru/forum/topic_1728149118: http://forum.dimonvideo.ru/forum/topic_1728149118/141/900#1865510760);
+
+* Methodfinder (by Steve Garman and Andreas
+Rozek) taken from the DroidScript - Wiki (http://wiki.droidscript.me.uk/doku.php?id=start) here called Functions Inspector (modified by octazid);
+
+* Colorpicker (inspired by the HexColorCode v2 from Schnee Wittchen) found in the DroidScript - Google Group (https://groups.google.com/forum/m/#!searchin/androidscript/Hex$20color$20code/androidscript/W_G9qU6SFbE) modified and created as a single Dialog (by octazid).
+
+You are awesome, guys! Many thanks!

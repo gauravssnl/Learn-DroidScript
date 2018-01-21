@@ -1,0 +1,10 @@
+{
+    "manifest" : {
+        "minSdkVersion": 8,
+        "targetSdkVersion": 16,
+        "debuggable": false,
+        "removePermissions": "WRITE_EXTERNAL_STORAGE",
+        "homeScreen": false,
+        "pathPattern": "*.js"
+    }
+}

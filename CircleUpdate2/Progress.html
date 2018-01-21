@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Hello World!</title>
+		<script src="file:///android_asset/app.js"></script>
+		<script src="Misc/progressbar.min.js"></script>
+		<style>
+		    body {
+		        background:#000
+		    }
+       #container {
+       height: 100%;
+       }
+       #container > svg {
+       height: 100%;
+       }
+		</style>
+	</head>
+	
+	<script>
+	
+	    var circle = null;
+	    
+	    function init()
+	    {
+    	    circle = new ProgressBar.Circle('#container', {
+                    color: '#FCB03C',
+                    strokeWidth: 8,
+                    text: { value: '0/100' },
+                    step: function(state, shape, attachment) {
+                        shape.setText((shape.value() * 100).toFixed(0) + "/100");
+                    }
+                });
+	    }
+	
+    	function start()
+    	{
+            //Animate from 0 to 100% over 2 seconds
+            circle.animate(1.0, { 
+                duration: 2000 
+            }, function() {
+                //Tell the app progress is finished
+                app.Execute('ProgressDone()');    
+            });
+    	}
+    	
+    	function reset()
+    	{
+    	    circle.stop();
+    	    circle.set(0);
+    	}
+    function progSet(val)
+    {
+         circle.set(val / 100);
+    }
+	
+	</script>
+	
+	<body onload="init()">
+		<div id="container"></div>
+	</body>
+</html>

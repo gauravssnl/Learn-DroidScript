@@ -1,0 +1,80 @@
+{
+    "version": 0.13,
+    "ui": {
+        "snippets": {
+            "width": 1,
+            "height": 0.06,
+            "fg": "#000000",
+            "bg": "#00ADBEEF",
+            "list": [
+                "()",
+                "[]",
+                "{}",
+                "→",
+                "\"\"",
+                "''",
+                ";",
+                "=",
+                "//"
+            ]
+        },
+        "workarea": {
+            "width": 1,
+            "height": 0.84,
+            "buffer": {
+                "fg": "#3A0000",
+                "fsize": 25,
+                "bg": "#FFFFFF",
+                "curcol": "#007A00"
+            },
+            "toolspane": {
+                "border": 0.05,
+                "width": 0.5,
+                "sep": {
+                    "width": 0.1
+                },
+                "pane": {
+                    "width": 0.9,
+                    "filelist": {
+                        "width": 0.5,
+                        "height": -1,
+                        "fg": "#FFFF00"
+                    },
+                    "fileops": {
+                        "width": 0.2,
+                        "height": -1,
+                        "fg": "#FFFF00"
+                    },
+                    "fontsizelist": {
+                        "length": 50,
+                        "width": 0.15,
+                        "height": -1,
+                        "fg": "#FFFF00"
+                    },
+                    "fontsizedimension": [
+                        "sp",
+                        "dp",
+                        "px",
+                        "pt",
+                        "mm"
+                    ],
+                    "funclist": {
+                        "width": 0.5,
+                        "height": -1,
+                        "fg": "#FFFF00"
+                    }
+                }
+            }
+        },
+        "firstbar": {
+            "width": 1,
+            "height": 0.05,
+            "bg": "#777777"
+        },
+        "secondbar": {
+            "width": 1,
+            "height": 0.05,
+            "bg": "#777777"
+        }
+    }
+}

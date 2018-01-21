@@ -1,0 +1,201 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>FileManager</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style type="text/css">
+        </style>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+		<h1>FileManager</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+		<p> Todo: Documentation for FileManager</p>
+		
+		<p>In order to use FileManager, you must first load the plugin at the top of your script 
+		using the <b>LoadPlugin</b> method like this:</p>
+		
+		<div class="samp">&nbsp;app.LoadPlugin( "FileManager" );</div>
+		
+		<p>Then you can create an instance of the plugin object when you need it like this:</p>
+		
+		<div class="samp">&nbsp;fileMng = app.CreateFileManager();</div>		
+		  
+		<br>
+		<p>Examples:</p>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Select file</h3>
+			<div id="examp1" style="font-size:70%">
+				app.LoadPlugin( "FileManager" );<br>
+				<br>
+				app.EnableBackKey(false);<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&nbsp;&nbsp;Where = 'OnStart';<br>
+				 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+				 &nbsp;&nbsp;btn = app.CreateButton( "Select file", 0.9, 0.3 );<br>				
+				 &nbsp;&nbsp;btn.SetOnTouch( StartFileManager );<br>
+				 &nbsp;&nbsp;lay.AddChild( btn );<br><br>
+				 <b id="snip1"  style="font-size:100%">
+				 &nbsp;&nbsp;fileMng = app.CreateFileManager();<br>
+				 </b><br>
+				 &nbsp;&nbsp;fileMng.SetOnTouch(SelectFile);<br>
+				 &nbsp;&nbsp;fileMng.SetOnOpened(OnOpened);<br>
+				 &nbsp;&nbsp;fileMng.SetOnClosed(OnClosed);<br><br>
+				 &nbsp;&nbsp;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function StartFileManager()<br>
+				{<br>
+				&nbsp;&nbsp;fileMng.Start();<br>
+				}<br><br>
+				function SelectFile(path)<br>
+				{<br>
+				&nbsp;&nbsp;fileMng.Close();<br>
+				&nbsp;&nbsp;alert(path);<br>
+				}<br><br>
+				function OnOpened()<br>
+				{<br>
+				&nbsp;&nbsp;Where = 'FileManager';<br>
+				}<br><br>
+				function OnClosed()<br>
+				{<br>
+				&nbsp;&nbsp;Where = 'OnStart';<br>
+				}<br><br>
+
+				function OnBack()<br>
+				{<br>
+				&nbsp;&nbsp;if (Where == 'OnStart')<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;app.Exit();<br>
+				&nbsp;&nbsp;else if (Where == 'FileManager')<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;fileMng.Back();<br>
+
+				}<br><br>
+
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+			</div>
+		</div>
+		
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Select folder</h3>
+			<div id="examp2" style="font-size:70%">
+				app.LoadPlugin( "FileManager" );<br>
+				<br>
+				app.EnableBackKey(false);<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&nbsp;&nbsp;Where = "OnStart";<br>
+				 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+				 &nbsp;&nbsp;btn = app.CreateButton( "Select folder", 0.9, 0.3 );<br>				
+				 &nbsp;&nbsp;btn.SetOnTouch( StartFileManager );<br>
+				 &nbsp;&nbsp;lay.AddChild( btn );<br><br>
+				 <b id="snip2"  style="font-size:100%">
+				 &nbsp;&nbsp;fileMng = app.CreateFileManager();<br>
+				 </b><br>
+				 &nbsp;&nbsp;fileMng.SetOnAddButtonTouch(SelectFolder);<br>
+				 &nbsp;&nbsp;fileMng.SetOnOpened(OnOpened);<br>
+				 &nbsp;&nbsp;fileMng.SetOnClosed(OnClosed);<br><br>
+				 &nbsp;&nbsp;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function StartFileManager()<br>
+				{<br>
+				&nbsp;&nbsp;fileMng.Start();<br>
+				}<br><br>
+				function SelectFolder(path)<br>
+				{<br>
+				&nbsp;&nbsp;YesNo = app.CreateYesNoDialog("Folder  " + path + "  ?");<br>
+				&nbsp;&nbsp;YesNo.SetOnTouch(OnTouchYesNo);<br>
+				&nbsp;&nbsp;YesNo.path = path;<br>
+				}<br><br>
+				function OnTouchYesNo(yesno)<br>
+				{<br>
+				&nbsp;&nbsp;if (yesno == "Yes") {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;fileMng.Close();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;alert("Folder  " + YesNo.path + "  !");<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+				function OnOpened()<br>
+				{<br>
+				&nbsp;&nbsp;Where = 'FileManager';<br>
+				}<br><br>
+				function OnClosed()<br>
+				{<br>
+				&nbsp;&nbsp;Where = 'OnStart';<br>
+				}<br><br>
+
+				function OnBack()<br>
+				{<br>
+				&nbsp;&nbsp;if (Where == 'OnStart')<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;app.Exit();<br>
+				&nbsp;&nbsp;else if (Where == 'FileManager')<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;fileMng.Back();<br>
+
+				}<br><br>
+
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+			</div>
+		</div>
+		
+
+		<p>The following methods are available on the FileManager object:</p>
+
+
+		<div class="samp">&nbsp;SetBackColor( col )</div>
+		<div class="samp">&nbsp;SetBackGradient( col1, col2, col3 )</div>
+		<div class="samp">&nbsp;SetBackground( img, options )</div>
+		<div class="samp">&nbsp;SetButtonsColors( backcolor, textcolor )</div>
+		<div class="samp">&nbsp;SetTextColor( col )</div>
+		<div class="samp">&nbsp;AdjustColor( hue, sat, bright, cont )</div><br>
+		
+		<div class="samp">&nbsp;SetOnClosed( callback ) //called when closing the file manager</div>
+		<div class="samp">&nbsp;SetOnOpened( callback ) //called at the start of the file manager</div>
+		<div class="samp">&nbsp;SetOnTouch( callback ) //the called function when you select a file</div>
+		<div class="samp">&nbsp;SetOnLongTouch( callback ) </div>
+		<div class="samp">&nbsp;SetOnAddButtonTouch( callback ) //activates an additional button</div>
+		<div class="samp">&nbsp;SetIconAddButton( icon_fontawesome )</div>
+		<div class="samp">&nbsp;SetPath( fullpath ) </div>
+		<div class="samp">&nbsp;SetFilter( extensions_filter ) // extensions_filter: null - all files; [".txt", ".js"] - .txt and .js only; [] - folders only. </div>
+		<br>
+		
+		<div class="samp">&nbsp;IsOpen() </div>
+		<div class="samp">&nbsp;GetPath() </div>
+		<div class="samp">&nbsp;GetFilter() </div>
+		<div class="samp">&nbsp;GetType()</div>
+		<div class="samp">&nbsp;GetVersion()</div>
+		<br>
+		
+		<div class="samp">&nbsp;Start() //start filemanager</div>
+		<div class="samp">&nbsp;Back() //returns to the previous level</div>
+		<div class="samp">&nbsp;Close() //closes the file manager</div>
+		<br>
+
+		
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

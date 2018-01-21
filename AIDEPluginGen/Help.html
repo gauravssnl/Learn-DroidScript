@@ -1,0 +1,29 @@
+<p><b><font color="#0099CC">AIDE DroidScript Plugin Generator</font></b></p>
+<p>This is a quick guide to get you started in DS plugin development using the AIDE (Android Java IDE) app.  This is not a tutorial about java or AIDE.  You must have AIDE installed before this script will work.</p>
+<br>
+<p><b><font color="#0099CC">Creating a New Plugin Template</font></b></p>
+<p>Select <i>Create New DS Plugin</i> from the menu.  You will be prompted to enter a plugin name and the name you want to use for the individual/company package name identifier.<br><br>
+Plugin name should be short, using the camel naming convention.  As example: 'MyPlugin'.<br><br>
+Individual/Company name will represent the package name.  This should be one word.  Example: 'mycompany'.  This will create a package named <i>com.mycompany.plugins.user</i>.</p>
+<p>Checking the <i>Use Minimalistic Template</i> will cause your new plugin template to contain no extra methods or code, except 'GetVersion', and the neccessary DroidScript code.  I would suggest creating a normal plugin first to learn how things work <i>under the hood</i></p>
+<p>Touch the Create Plugin button.</p>
+<p>All files neccessary for creating a DS plugin will now be created in the AIDE working directory, /sdcard/AppProjects.  All files will be updated to use your plugin name and package name.</p>
+<p>Close this script and open AIDE</p>
+<p>Open the file selector, find your plugin directory and select 'Open this Project'.  The project will open. Select the <i>src</i> folder and open your plugin .java file.  You will need to use the file selector again, find the 'plugin' folder inside of your project.  Open the '.inc' file (Example: MyPlugin.inc).  This is the JavaScript required to integrate your plugin with DS.  Any functions you add to your plugin must be called from this file.</p>
+<p>Program your plugin.</p>
+<p>Any libraries you need AIDE to use with your plugin, copy them into the 'libs' folder inside of your project.</p>
+<p>In the 'plugin' folder you will find a '.html' file with your plugin name.  This is the file containing your plugin's documentation.</p>
+<p>When ready to try your plugin, press the menu then, More..., Project..., <b>Refresh Build</b>. After this step is complete exit AIDE and return to this script.</p>
+<br>
+<p><b><font color="#0099CC">Zipping and Installing the DS Plugin</font></b></p>
+<p>Select <i>Build DS Plugin Zip</i> from the menu.  A selection box will list all the project directories in your AIDE environment.  Select your plugin.</p>
+<p>Touch the <i>Build/Install Plugin</i> button</p>
+<p>Your plugin '.jar' file will be created, all files within the <i>plugin</i> directory will be zipped into a file named after your plugin (Example: MyPlugin.zip).  This script will copy it to the DS Plugins directory.  You will be instructed to restart DroidScript.  When you do so, your plugin will be installed.</p>
+<p><b>All Done!</b></p><br>
+<p><b><font color="#0099CC">Reinstalling</font></b></p>
+<p>As you work on your plugin you can use the <i>Build DS Plugin Zip</i> option over and over without deleting any files.  It will update your plugin as needed. Remember you still must restart DroidScript between builds.  Also, remember to always 'Refresh Build' from within AIDE.</p>
+<p>I would recommend turning on Dexer Optimization within AIDE.  It will cause a longer build time, but your plugin will be smaller in size and optimized.</p>
+<br><p><b><font color="#0099CC">HAPPY CODING! </font></b> --- Chris Ferrell :)</p>
+
+
+	
