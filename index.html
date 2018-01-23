@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Web Server Demo</title>
+	
+<script>
+	function SendMessage( msg )
+	{
+		var httpRequest = new XMLHttpRequest();
+		httpRequest.onreadystatechange = function() { HandleReply(httpRequest); };  
+		httpRequest.open("GET", "/message?msg=" + msg, true);
+		httpRequest.send(null);
+	}
+
+	function HandleReply( httpRequest )
+	{
+		if( httpRequest.readyState==4 ) 
+		{
+			if( httpRequest.status==200 ) txt.innerHTML = httpRequest.responseText;
+			else txt.innerHTML = "Error: " + httpRequest.status + " " +  httpRequest.responseText;
+		}
+	}
+</script>
+</head>
+
+
+<body>
+	 <h1>Web Server Demo</h1> 
+	 <img src="Hello World/Img/Hello World.png" width="72"> 
+	 
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<br><br>
+		 <b>File upload:</b> <br>
+		Image<input type="file" name="Img" /> <br>
+		Sound<input type="file" name="Snd" /> <br>
+		<input type="submit" value="Submit" /> <br>
+	</form>
+  
+ <br>
+ <a href="Hello World/">Directory Listing</a>
+ <br><br><br>
+
+ <input type="button" value="Send Message" onclick="SendMessage('Hello')"> Hello --> 
+ <font id="txt" size="5"></font>
+
+</body>
+</html>
