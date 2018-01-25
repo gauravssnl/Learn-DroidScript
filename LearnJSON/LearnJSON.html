@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+
+	
+<script>
+     var header = document.querySelector("header");
+     var selection = document.querySelector("section");
+     var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+     var request = new XMLHttpRequest();
+     request.open('GET', requestURL);
+     request.responseType = 'json';
+     request.send();
+     request.onload = function ()
+{
+	var superHeroes = request.response;
+	var myh1 =document.createElement('h1');
+	myh1.textContent = JSON.stringify(superHeroes);
+	var mybody = document.querySelector("body");
+	mybody.appendChild(myh1);
+	//alert(JSON.stringify(superHeroes));
+     }
+     
+    //Called after application is started.
+    function OnStart()
+    {
+       // app.ShowPopup( "HTML Rocks!" );
+       
+     
+
+
+       
+    }
+   
+  
+    
+</script>
+
+<style>
+	body { background-color: #ffffff; }
+    .hello 
+    { 
+        font-size: 8; 
+        width: 100%;
+        margin-top: 2em;
+        text-align: center;
+        color: blue;
+    }
+</style>
+
+
+<body onload="app.Start()">
+
+
+	
+</body>
+</html>
