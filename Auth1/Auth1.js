@@ -2,20 +2,20 @@
 var USERNAME = "Virtuos86";
 var PASSWORD = "*******";
 
-// Здесь пробуем заменить `http` на `https`. 
-// Этот урл отдает при авторизованном пользователе количество непрочитанных уведомлений.
+// Here we try to replace `http` with` https`.
+// This URL gives the number of unread notifications with the authorized user.
 var COUNTER_URL = "https://www.linux.org.ru/notifications-count";
-// Урл для авторизации.
+// URL for authorization
 var AUTH_URL = "https://www.linux.org.ru//ajax_login_process/";
-// Урл главной странице; с нее выдираем CSRF-токен и, по идее, должны начинать сессию.
+// Url the main page; with it we rip out the CSRF-token and, in theory, should start the session.
 var MAIN_URL = "http://linux.org.ru";
 
-// Этот говнюк будет ходить по ссылкам.
+// This shit will follow the links.
 var HTTP_REQUEST = new XMLHttpRequest();
 
 /////////////////////
 
-// Устанавливаем разом все необходимые заголовки для запроса.
+// Set all necessary headers for the request at once.
 function setSomeHeaders( httpRequest )
 {
     httpRequest.setRequestHeader('User-Agent', 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.11) Gecko/20101012 Firefox/3.6.11');
@@ -23,7 +23,7 @@ function setSomeHeaders( httpRequest )
     httpRequest.setRequestHeader ('Accept', "application/json");
 };
 
-// Код примера из DroidScript, который оказался полезен.
+/// Code example from DroidScript, which turned out to be useful.
 // Handle the server's reply (a json object). 
 function HandleReply( httpRequest ) 
 { 
@@ -39,7 +39,7 @@ function HandleReply( httpRequest )
             txt.SetText( "Error: " + httpRequest.status + httpRequest.responseText); 
     } 
     app.HideProgress();
-    // Здесь смотрим список заголовков ответа и надеемся найти там куки.
+    /// Here we look at the list of response headers and hope to find cookies there.
     alert( httpRequest.getAllResponseHeaders() );
 };
 
@@ -68,13 +68,13 @@ function OnStart()
     //Add layout to app.     
     app.AddLayout( lay ); 
 
-    // Авторизуемся.
+    // We are authorized..
     auth();
-    // На всякий случай закрываем соединение, это на время отладки.
+    // Just in case we close the connection, this is for debugging time.
     HTTP_REQUEST.abort();
 };
 
-// // Код примера из DroidScript, который оказался бесполезен, ну да и фиг с ним — пусть будет.
+// // The code of the example from DroidScript, which turned out to be useless, well, and figs with it - let it be.
 //Handle button press. 
 function btn_OnTouch()  
 {  
@@ -95,10 +95,10 @@ function SendRequest( url )
     app.ShowProgress( "Loading..." ); 
 };
 
-// Вообще это костыль, потому что токен и так должен отдаваться в куках, но их, блин, нет!
+// In general, this is a crutch, because the token and so should be given in the cookies, but they, pancake, no!
 function getCsrf()
 {
-    // Делаем синхронный запрос (`false`).
+    // // We make a synchronous request (`false`).
     HTTP_REQUEST.open( "GET", MAIN_URL, false);
     setSomeHeaders( HTTP_REQUEST );
     HTTP_REQUEST.onreadystatechange = function() {};
@@ -117,7 +117,7 @@ function auth()
     setSomeHeaders( HTTP_REQUEST );
     HTTP_REQUEST.onreadystatechange = function() { HandleReply(HTTP_REQUEST); };
     HTTP_REQUEST.send( PARAMS );
-    // Вообще здесь отдается json-объект, с именем пользователя и флагом, при успешной авторизации, но и так сгодится.
+    // In general, here is given a json-object, with the user name and flag, with successful authorization, but it will do so.
     if( HTTP_REQUEST.responseText.substr( 0, 1 ) == "{" )
     {
    	     return true;
