@@ -1,0 +1,11 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+  lay.SetOnTouch( SayHello );
+  app.AddLayout( lay );
+}
+
+function SayHello()
+{
+  app.ShowPopup("Привет мир!")
+}

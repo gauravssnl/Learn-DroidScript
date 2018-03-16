@@ -1,0 +1,32 @@
+<b>Текст и поле ввода</b>
+app.CreateText или CreateTextEdit( текст, ширина, высота, опции (html, fontawesome, autoscale, right, left, multiline и/или bold)) - созаёт текст или поле ввода
+
+<b>Особые методы:</b>
+<div class="block">
+<b>Устанавливает:</b>
+SetText(текст) - текст
+SetHtml(html) - html текст
+SetTextSize(размер) - размер текста
+SetTextColor(цвет) - цвет текста
+SetFontFile(файл шрифта) - файл шрифта
+SetElipsize(режим обрезки) - обрезка текста
+</div>
+
+<b>Особые методы для TextEdit:</b>
+ClearHistory() - очищает историю
+
+<div class="block"> 
+<b>Получает:</b>
+GetCursorLine() - позицию курсора (строка)
+GetCursorPos() - позицию курсора (знак)
+GetSelectedText() - выбранный текст
+GetSelectionEnd() - конец выделенного текста
+GetSelectionStart() - начало выделенного текста
+</div>
+InsertText(текст, начало, конец) - вставляет текст
+ReplaceText(текст, начало, конец) - заменяет текст
+Redo() - вернуть действие
+SetCursorPos(поз) - устанавливает позицию курсора
+SetSelection(начало, конец) - устанавливает выделение
+SetHint(текст) - устанавливает подсказку
+Undo() - отменить действие

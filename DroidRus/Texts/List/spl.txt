@@ -1,0 +1,16 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+  var data = "Folder:Папка,Audio:Аудио,Photo:Фото,Video:Видео";
+  lst = app.CreateList( data, 0.8, 0.4 );
+  lst.SetOnTouch( lst_OnTouch );
+  lay.AddChild( lst );
+
+  app.AddLayout( lay );
+}
+
+function lst_OnTouch( title, body, type, index )
+{
+  app.ShowPopup( "Выбран " + title );
+}

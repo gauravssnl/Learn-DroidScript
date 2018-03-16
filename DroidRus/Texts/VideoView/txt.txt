@@ -1,0 +1,20 @@
+<b>Просмотр видео</b>
+app.CreateVideoView(ширина, высота, опции) - создаёт просмотрщик видео
+
+<b>Особые методы:</b>
+SeekTo(секунды) - перемотать
+
+<div class="block">
+<b>Устанавливает:</b>
+SetFile(имя файла) - файл
+SetOnError(callback) - функцию при ошибке
+SetOnComplete(callback) - функцию при завершении
+SetOnReady(callback) - функцию о готовности
+</div>
+
+Stop() - остановить
+GetDuration() - получает длительность
+Pause() - пауза
+Play() - воспроизвести
+IsPlaying() - воспроизводится?
+IsReady() - закончилось?

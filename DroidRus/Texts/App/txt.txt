@@ -1,0 +1,195 @@
+<b>Приложение</b>
+BluetoothList(p1) - возвращает список устройств bluetooth
+BluetoothSerial(mode)
+Broadcast(p1, p2)
+CheckLicense() - проверяет лицензию Google Play 
+
+<div class="block">
+<b>Создаёт:</b>
+CreateAudoRecorder() - диктофон
+AudioRecorder() - диктофон
+CreateBluetoothSerial()
+CreateCrypt(options)
+CreateDebug(debug text)
+CreateDownloader() - загрузчик
+Downloader() - загрузчик
+CreateEmail(login, password)
+CreateImage(file, width, height, options, bitmapx, bitmapy)
+CreateIOIO(p1)
+CreateLocator(тип, p2)
+<div class="block"><b>Тип:</b>“GPS”
+“Network”
+“GPS,Network”</div>
+CreateMediaPleer()
+CreateMediaStore()
+CreateNetClient(type)
+CreateNxt()
+CreateNxtRemote()
+CreateObject(name)
+CreatePlayStore()
+CreateSensor(тип, опции)
+<div class="block"><b>Тип:</b>Accelerometer - акселерометр
+MagneticField - датчик Холла
+Light - датчик освещения
+Orientation - датчик ореентации
+Proximity - датчик расстояния
+Temperature - датчик температуры
+GameRotation - датчик поворота
+GeomagneticRotation - компас
+Gravity - датчик гравитации
+Gyroscope - гироскоп
+HeartRate - датчик пульса
+Acceleration - датчик ускорения
+Pressure - барометр
+Humidity - датчик относительной влажности 
+RotationMotion - датчик вращения
+StepCounter - счётчик шагов
+StepDetector - шагомер</div><div class="block"><b>Опции:</b>Fast - быстро
+Fastest - очень быстро
+Medium - средне
+Slow - медленно
+</div>
+CreateService(packageName, classname, callback, options)
+CreateSmartWatch(p1)
+CreateSpeechRec(options)
+CreateSynth(p1) - создаёт синтезатор
+CreateSysProc(shell)
+CreateUSBSerial(baudRate, dataBits, stopBits, parity)
+CreateWebServer(port, options)
+</div>
+
+<div class="block">Debug(text)
+DisableKeys(keyList)
+EnableBackKey(enable)
+  function OnStart(){}
+  function OnBack(){}
+Execute(code)
+Exit(p1)
+</div>
+
+<div class="block">
+<b>Получает:</b>
+GetAccounts() - аккаунты
+GetAppName() - название программы
+GetAppPath() - путь программы
+GetBatteryLevel() - уровень заряда
+GetBuildNum() - номер сборки
+GetClipboardText() - текст буфера обмена
+GetCountry() - страну
+GetCountryCode() - код страны (ru, en...)
+GetData(p1) - данные
+GetDatabaseFolder() - папку базы данных
+GetDefaultOrientation() - стандартную ориентацию
+GetDeviceId() - номер устройства
+GetDisplayHeight() - высоту области программы в px
+GetDisplayWidth() - ширину области программы в px
+GetDSVersion() - версию DroidScript
+GetEnv()
+GetIntent()
+GetIPAddress() - ip адрес
+GetJoystickName(joyNum)
+GetJoystickState(joyNum, keyNum)
+1 - кнопка нажата, 0 - кнопка не нажата
+-1,0 ... 1,0 - для axis устройств<div class="block"> <table><tr><th>Кнопка</th><th>Описание</th></tr><tr><td>“Up”</td><td>DPad Up</td></tr> <tr><td>“Down”</td><td>DPad Down</td></tr><tr><td>“Left”</td><td>DPad Left</td></tr><tr><td>“Right”</td><td>DPad Right</td></tr><tr><td>“Center”</td><td>DPad Center</td></tr><tr><td>“X”, “Y”, “Z”</td><td>X, Y, Z кнопки</td></tr><tr><td>“A”, “B”, “C”</td><td>A, B, C кнопки</td></tr><tr><td>“Start”</td><td>Кнопка start</td></tr><tr><td>“ThumbLeft”</td><td>Кнопки ThumbLeft</td></tr><tr><td>“ThumbRight”</td><td>Кнопки ThumbRight</td></tr></table></div>
+GetLanguage()
+GetLanguageCode()
+GetMacAddress()
+GetMediaFile(“MyApp”, “.png”)
+GetMetadata(file, keys)
+GetModel()
+GetName()
+GetObjects()
+GetOptions()
+GetOrientation()
+GetOSVersion()
+GetPackageName() - имя пакета
+GetPath()
+GetPrivateFolder(имя) - скрытую папку
+GetRingerMode()
+GetRotation()
+GetRunningApps()
+GetRunningServices()
+GetScreenDensity()
+GetScreenHeight()
+GetScreenWidth()
+GetTop()
+GetUser()
+GetVersion()
+GetVolume(stream)
+GoToSleep()
+</div>
+
+<div class="block">HideKeyboard() - скрыть клавиатуру 
+HideProgressBar() - скрыть прогресс бар
+</div>
+
+<div class="block"><b>Если:</b>
+IsBluetoothEnabled() - включён Bluetooth
+IsBluetoothOn()
+IsBluetoothOff()
+IsChrome()
+IsFolder( folder )
+IsKeyboardShown()
+IsNewVersion()
+IsPro() - 
+IsScreenOn()
+IsTablet()
+IsWifiEnabled()</div> 
+<div class="block">KillApp(file)
+LoadPlugin(url)
+LoadScript(url, callback)
+ListFolder(путь к папке, тип файлов, лимит, опции)<div class="block"><b>Опции:</b>
+"FullPath" - получать полный путь</div>
+Odroid(p1, p2, p3)
+OpenUrl(url)
+app.OpenUrl('http://google.com');
+PreventScreenLock(prevent)
+app.PreventScreenLock(true);
+PreventWifiSleep(p1)
+SendIntent(packageName, className, action, category, uri, type, extras)
+SendMail(address, subject, body, attachment)
+SendMessage(msg)
+</div>
+
+<div class="block">
+<b>Устанавливает:</b>
+SetAlarm(type, id, callback, time, interval)
+SetAutoBoot(TrueFalse)
+SetAutoWifi(TrueFalse)
+SetBluetoothEnabled(enable)
+SetClipboardText(text)
+SetData(name, value)
+SetDebugEnabled(enabled)
+SetJoystickOptions(options)
+SetOnBroadcast(callback)
+SetOnError(callback)
+SetOnKey(callback)
+SetOptions(options)
+SetOrientation(orientation, callback) - ориентацию приложения
+<div class="block"><b>Ориентация:</b>"Landscape", "Portrait", "ReverseLandscape", "ReversePortrait"</div>
+SetRingerMode(mode)
+SetScreenBrightness(brightness)
+SetScreenMode(mode)
+SetSharedApp(p1)
+SetTitle(заголовок) - заголовок приложения
+SetVolume(type, val)
+SetWifiEnabled(enable)
+</div>
+
+<div class="block">ShowDebug(p1)
+ShowKeyboard(ctrl)
+ShowMenu(p1,p2)
+ShowProgressBar(заголовок, процент, опции) - создать прогресс бар
+SimulateTouch( obj,x,y,dir )
+SimulateTouch()
+StartApp( file,options )
+StartDebugServer()
+StartService(packageName, className)
+StopApp( file )
+StopService()
+ToBack() - сворачивает приложение
+Try(p1, p2, p3)
+UpdateProgressBar(процент) - обновить прогресс бар
+Vibrate(pattern)
+Wait(secs)
+</div>

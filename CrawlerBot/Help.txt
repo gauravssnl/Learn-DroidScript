@@ -1,0 +1,87 @@
+//HELP
+
+//This is a comment and thus won't be executed
+
+//req method url path parameters headers
+
+//E.X.
+
+//req get http://www.google.com /search q=DroidScript User-Agent=Firefox
+//areq method url path parameters headers
+
+//Server Request. Data is stored in variable "res"
+//areq ==	asynchronous request. The script execution won't wait for a response
+
+//reg newVariable baseVariable RegEx flags
+
+//E.X.
+
+//reg pat res (href|src)=".+?" gmi
+
+//Grab all resources of WebPage. Global (g), Multiline (m), Ignore Case (i) flags...
+//Perform Regular Expression pattern matching
+
+//rep newVariable baseVariable pattern replaceWith flags
+
+//RegEx pattern replace
+
+//start
+
+//Beginning of loop area
+
+//loop
+
+//jump back to loop start
+
+//loop 3
+
+//loop 3 times
+
+//Nested loops not supported
+
+//%%var%%
+
+//access proccessed variable by pointer
+
+//E.X.
+
+//reg var..........
+%%var%% = 5
+
+//##var##
+
+//Grab proccessed variable data
+
+//E.X.
+
+//reg var.........
+alert(##var##)
+
+//JavaScript & DroidScript scripting allowed....
+//To create a new script double click the save button
+//Click your device's menu button to copy script to clipboard
+//Long Click script at "Open" Screen to delete
+
+//tcp connect host port
+
+//E.X.
+
+//atcp connect www.google.com 80
+//async
+
+//Transmision Control Protocol (exposed response headers)
+
+//tcp send data charset
+
+//E.X.
+
+//tcp send GET$/path$HTTP/1.1\r\nq=query\r\n\r\n
+
+//Spaces in TCP are represented by "$"
+
+//tcp byte data mode
+
+//mode can be Hex, Int...
+//Data should be represented in relative numeric system.... (mode=Hex? then data should be in hexadecimal...)
+
+//tcp disconnect

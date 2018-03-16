@@ -1,0 +1,14 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+  btn = app.CreateButton( "Кнопка", -1, -1, "custom" );
+  btn.SetStyle("grey", "red", 4);
+  btn.SetOnTouch( SayHello );
+  lay.AddChild( btn );
+  app.AddLayout( lay );
+}
+
+function SayHello()
+{
+  app.ShowPopup("Привет мир!")
+}

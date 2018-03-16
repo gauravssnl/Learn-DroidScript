@@ -1,0 +1,29 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
+	 btn = app.CreateButton( "Показать диалоговое окно", 0.6, -1);
+	 btn.SetOnTouch( btn_OnTouch );
+	 lay.AddChild( btn );
+  	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+  dlgTxt = app.CreateDialog( "Выбери продукт" );
+  layDlg = app.CreateLayout( "linear", "vertical,fillxy,left" );
+  layDlg.SetPadding( 0.02, 0, 0.02, 0.02 );
+  dlgTxt.AddLayout( layDlg );
+  var list = "Яблоки,Апельсины,Бананы,Сыр,Молоко,Яйца,Мука";
+  lstDlg = app.CreateList( list, 0.8, 0.3 );
+  lstDlg.SetTextSize( 22 );
+  lstDlg.SetTextColor( "#dddddd" );
+  lstDlg.SetOnTouch( lst_OnTouch );
+  layDlg.AddChild( lstDlg );
+  dlgTxt.Show();
+}
+
+function lst_OnTouch(item)
+{
+  dlgTxt.Hide();
+  app.ShowPopup( "Ты выбрал" + item, "Short" );
+}

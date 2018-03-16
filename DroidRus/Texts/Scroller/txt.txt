@@ -1,0 +1,8 @@
+<b>Скроллер</b>
+app.CreateScroller(ширина, высота)
+
+<b>Основные методы:</b>
+GetScrollX() - получает координаты по x
+GetScrollY() - получает координаты по y
+ScrollBy(x, y) - скроллит
+ScrollTo(x, y) - скроллит

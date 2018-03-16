@@ -1,0 +1,75 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	    <title>AlertPlus</title>
+ 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<style>
+		  .label { font-size: 1.25rem; font-weight: 650; padding: 8px; background-color: #6c757d; color: #fff; border-radius: 8px; }
+		  .label + p { margin-bottom: 5px; font-size: 1rem; color: #000; text-decoration: underline; }
+		  .mark { color: #17a2b8; }
+		  .mark > span { color: #007bff; }
+		</style>
+		
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-theme="c" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+		<h1>AlertPlus</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<p> Todo: Documentation for AlertPlus</p>
+		
+		<p>In order to use AlertPlus, you must first load the plugin at the top of your script 
+		using the <b>LoadPlugin</b> method like this:</p>
+		
+		<div class="samp">&nbsp;app.LoadPlugin( "AlertPlus" );</div>
+		
+		<p>Then you can create an instance of the plugin object when you need it like this:</p>
+		
+		<div class="samp">&nbsp;ap = app.CreateAlertPlus();</div>
+		
+		<br><br>
+		
+	    <span class="label">Global Variables:</span>
+		
+	    <p>Dialog Themes:</p>
+		
+	    <p class="samp mark">Light: <span>ap.THEME_LIGHT</span> (value: 3)</p>
+	    <p class="samp mark">Dark: <span>ap.THEME_DARK</span> (value: 2)</p>
+	    <p class="samp mark">Basic: <span>ap.THEME_BASIC</span> (value: 1)</p>
+	    
+	    <p>Popup Length:</p>
+	    
+	    <p class="samp mark">Long: <span>ap.LENGTH_LONG</span> (value: 1)</p>
+	    <p class="samp mark">Short: <span>ap.LENGTH_SHORT</span> (value: 0)</p>
+		  
+	    <br> <span class="label">Doc List:</span>
+		 
+		 <ul data-role="listview" data-inset="true">
+		   <li><a href="createalert.html">Create Alert</a></li>
+		   <li><a href="showalert.html">Show Alert</a></li>
+		   <li><a href="createprogress.html">Create Progress</a></li>
+		   <li><a href="showpopup.html">Show Popup</a></li>
+		   <li><a href=""><del>Show Progress</del></a></li>
+		 </ul>
+		 <br>
+		 
+		   	<p style="margin-left:5px;text-align:left;">2018&copy; ver 1.0 Cemal G.</p>
+		   
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

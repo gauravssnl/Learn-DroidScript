@@ -1,0 +1,77 @@
+<b>Слой</b>
+app.CreateLayout(тип, опции) - создаёт слой
+<div class="block">
+<b>Тип:</b>
+Linear - линейный
+Absolute - абсолютный
+Frame - слоистый
+
+<b>Опции:</b>
+FillX - заполнить x
+FillY - заполнить y
+FillXY -  заполнить x и y
+Vertical - вертикальное расположение дочерних элементов
+Horizontal - горизонтальное расположение дочерних элементов
+TouchThrough - пропускать нажатия 
+TouchSpy - пропускать нажатия
+VCenter - выравнивание дочерних элементов по центру y
+HCenter - выравнивание дочерних элементов по центру x
+Bottom - выравнивание дочерних элементов по низу
+Left - выравнивание дочерних элементов по левому краю
+Right - выравнивание дочерних элементов по правому краю
+Top - выравнивание дочерних элементов по верху</div>
+ 
+<b>Особые методы:</b>
+AddChild(дочерний объект, позиция) - добавляет объект в слой
+ChildToFront(дочерний объект на передний план) - выносит объект на передний план
+DestroyChild(объект для разрушения) - разрушает объект
+GetChildOrder() - возвращает 0 или 1 объект на переднем плане 
+RemoveChild(объект) - удаляет объект из слоя
+SetOrientation(ориентация) - устанавливает ориентацию слоя
+ 
+<b>Методы применимые для всех объектов:</b>
+AdjustColor( hue, sat, bright, cont ) - изменяет цвет
+Animate(тип, функция по завершению, время) - анимирует объект<div class="block"><b>Тип:</b> 
+SlideFrom[Right,Left,Top,Bottom]
+SlideTo[Right,Left,Top,Bottom]
+ScaleFrom[Right,Left,Top,Bottom]
+ScaleTo[Right,Left,Top,Bottom]
+FadeIn 
+FadeOut 
+Flip</div>
+Destroy() - разрушает
+Release() - освобождает
+Focus() - выбирает объект
+
+<div class="block">
+<b>Получает:</b>
+GetAbsHeight()
+GetAbsWidth()
+GetHeight() - высоту
+GetPosition() - позицию
+GetType() - тип
+GetVisibility() - видимость
+Hide, Show или Gone
+GetWidth() - ширину
+</div>
+<div class="block">
+<b>Устанавливает:</b>
+SetBackColor(цвет фона) - цвет фона
+P.s. Цвета задаются как в 16-ричной форме, так и обычныой строкой: black, white
+SetBackGradient( colorCode1, colorCode2,colorCode3, p4, p5, p6, p7) - линейную градиентную заливку фона
+SetBackGradientRadial(x, y, радиус, colorCode1, colorCode2, colorCode3, p7) - круговую градиентную заливку фона
+SetBackgroud(изображение, опции("repeat" для повторения)) - изображение на фон
+SetMargins(левый, верхний, правый, нижний) - внешние отступы
+SetOnTouch(функция при нажатии)
+SetPadding( слева, сверху, справа, снизу) - внутренние отступы
+SetPosition( слева, сверху, ширина, высота, опции) - позицию и размер
+SetScale(x, y) - маштаб
+SetSize(ширина, высота) -размеры
+SetTouchable( касательность (true/false)) - проходимость касания через объект
+SetVisibility(видимость ("Hide", "Show" или "Gone")
+SetOnTouch( callback ) - функцию при касании
+</div>
+
+Show() - видим
+Hide() - скрыт
+Gone() - скрыт и не занимает место

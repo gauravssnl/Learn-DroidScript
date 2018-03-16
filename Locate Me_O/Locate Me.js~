@@ -1,0 +1,135 @@
+function OnStart()
+{
+	app.SetOrientation( "portrait" );
+	layMain = app.CreateLayout( "Linear", "Vertical" );
+	layMain.SetBackGradient( "#ff0000", "#ffff00");
+	title = app.CreateText( "Locate Me",1, -1, "Center" );
+	title.SetTextSize( 25 );
+	title.SetBackColor( "#cc22cc" );
+	layMain.AddChild( title );
+	txt1 = app.CreateText( "Latitude :", 1,-1,"Left");
+	txt1.SetTextSize( 20 );
+	layMain.AddChild( txt1 );
+	latEdit = app.CreateTextEdit( "",1,-1 );
+	layMain.AddChild( latEdit );
+	txt2 = app.CreateText( "Longitude :",1,-1,"Left" );
+	txt2.SetTextSize( 20 );
+	layMain.AddChild( txt2 );
+	longEdit = app.CreateTextEdit( "",1, -1 );
+	layMain.AddChild( longEdit );
+	app.AddLayout( layMain );
+	txt3 = app.CreateText( "Location Details :" ,1, -1,"Left");
+	txt3.SetTextSize( 20 );
+	layMain.AddChild( txt3 );
+	resultEdit = app.CreateTextEdit( "" );
+	resultEdit.SetSize( 1,0.5);
+	layMain.AddChild( resultEdit );
+	layB = app.CreateLayout( "Linear", "Horizontal,FillXY" );
+	findBtn = app.CreateButton( "Find", 1/2,-1 );
+	findBtn.SetOnTouch( findBtn_OnTouch );
+  layB.AddChild( findBtn );
+	clearBtn = app.CreateButton( "Clear",1/2,-1 );
+	clearBtn.SetOnTouch(clear);
+
+	layB.AddChild( clearBtn );
+	devBtn = app.CreateButton( "About",1/3,-1 );
+//	layB.AddChild( devBtn );
+	layMain.AddChild( layB );
+	devText = app.CreateText( "Developer:  gauravssnl" );
+	devText.SetTextColor( "#ff0000" );
+	devText.SetOnTouch( dev_OnTouch );
+	
+	layMain.AddChild( devText );
+}
+
+
+function findBtn_OnTouch()
+{
+	try
+	{
+	loc = app.CreateLocator( "GPS,Network" );
+	loc.SetOnChange( loc_OnChange );
+	clear();
+	loc.Start();
+	app.ShowPopup( "Locating..." );
+	}
+	catch(e)
+	{
+	  app.ShowPopup( "Error: " + e );
+	}
+}
+
+function loc_OnChange(data)
+{
+	latEdit.SetText( data.latitude );
+	longEdit.SetText( data.longitude );
+	app.ShowPopup("Location Provider: " +data.provider)
+	loc.Stop();
+	if(data)
+	  getDetails();
+}
+
+function getDetails()
+{
+	latitude = latEdit.GetText();
+	longitude = longEdit.GetText();
+	if(latitude && longitude) 
+	{
+	try
+	{
+	url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latitude + "," + longitude;
+	request = new XMLHttpRequest();
+	request.open('GET', url);
+	request.send()
+	request.onload = function ()
+{
+	response = request.response;
+	resultEdit.SetText( response );
+	showMap();
+}
+
+	}
+catch(e) 
+{
+  app.ShowPopup( "Errror: " +e );
+}
+	}
+	
+else
+app.ShowPopup( "Failed to connect" );
+}
+
+function clear()
+{
+	latEdit.SetText(  "");
+	longEdit.SetText("");
+	resultEdit.SetText( "" );
+	if(loc)
+	 loc.Stop();
+}
+
+function dev_OnTouch()
+{
+	app.ShowPopup( "Developer: gauravssnl.\nApp uses Google Maps API to find Location details." );
+}
+
+function showMap()
+{
+	try
+	{
+//	alert(latitude);
+//	alert(longitude);
+	layW = app.CreateLayout( "Linear", "VCenter,FillXY" );
+	web = app.CreateWebView( 0.8,0.8, "AllowZoom, Wide,AutoZoom,IgnoreErrors", 100);
+	
+	url = "https://maps.google.com/maps?q=" + latitude + "," + longitude;
+	layW.AddChild( web );
+	//layMain.Hide();
+	app.AddLayout( layW );
+	web.LoadUrl(  url);
+	}
+	catch(e)
+	{
+	app.ShowPopup( "Error: " + e );
+	}
+}

@@ -1,0 +1,10 @@
+req get https://www.google.com
+reg pat res  (href|src)=".+?" gmi
+%%pat%% = %%pat%%.join("\n\n")
+rep pat  (href|src)=|" 
+alert(%%pat%%)
+//tcp connect www.google.com
+//tcp send GET$/search$HTTP/1.1\r\nq=query;\r\n\r\n
+//alert(%%res%%)
+
+//Resource Extractor, by @ValentinHacker

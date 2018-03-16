@@ -1,0 +1,14 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "FillXY" );
+  glview = app.CreateGLView( 1, 1, "Fast2d" );
+  lay.AddChild( glview );
+  img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame );
+  app.AddLayout( lay );
+}
+
+function DrawFrame()
+{
+  glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 );
+  glview.Render();
+}

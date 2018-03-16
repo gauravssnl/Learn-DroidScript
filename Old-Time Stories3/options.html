@@ -1,0 +1,359 @@
+<html>
+  <head>
+   <link rel="stylesheet" href="w3.css">
+ <!--   <script src="alphabetkey.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="options.js"></script>
+    <script src="diacritics.js"></script>
+ 
+
+      
+    <style>
+     button {
+       width:90%;
+     }
+     .silent {
+       color: #666;
+     }
+    </style>
+  </head>
+
+<body class="w3-content w3-xlarge" style="max-width:700px">
+  <div class="class=w3-container w3-orange">
+    <h1 class="w3-container">Alphabet Settings and Sounds</h1>
+  </div>
+  
+  
+<div class="w3-accordion w3-white ">
+  
+  <button id="LayoutBtn"   class="w3-btn-block w3-left-align w3-border">
+    Layout
+  </button>
+
+  <div    id="LayoutSection"      class="w3-accordion-content w3-container w3-hide w3-padding-small w3-large">
+    <!--  
+    <div class="w3-full">
+      <label for="lower-cutoff" class="w3-threequarter">Exclude Common Words:</label>
+ 
+      <select   id="lower-cutoff" class="w3-quarter">
+        <option id="0"    value="0"   >0       </option>
+        <option id="30"   value="30" selected >top 30  </option>
+        <option id="65"   value="65"  >top 65  </option>
+        <option id="145"  value="145" >top 145 </option>
+        <option id="300"  value="300" >top 300 </option>
+        <option id="700"  value="700" >top 700 </option>
+        <option id="1650" value="1650" >top 1650</option>
+        <option disabled></option>
+      </select>
+    </div>
+-->
+    <div class="w3-full">
+      <label for="layout" class="w3-threequarter">Layout:</label>
+  
+      <select id="layout" class="w3-quarter">
+        <option id='N' value="N" selected>Normal</option>
+        <option id='S' value="S" >Sequential</option>
+        <option id='C' value="C" >Columns</option>
+<!--        <option disabled></option> -->
+      </select>
+    </div>
+
+    <div class="w3-full">
+      <label class="w3-validate w3-threequarter" for="layout">Color Voicing: </label>
+      <input class="w3-check w3-quarter" type="checkbox" id="colorVoiced" value="COLORVOICED" checked>
+    </div>
+
+    <div class="w3-full">
+      <label class="w3-validate w3-threequarter" for="greyVowels">Grey Silent Vowels: </label>
+      <input class="w3-check w3-quarter" type="checkbox" id="greyVowels" value="GREYVowels" checked>
+    </div>
+
+    <div class="w3-full">
+      <label class="w3-validate w3-threequarter" for="pirate">Pirate Speak </label>
+      <input class="w3-check w3-quarter" type="checkbox" id="pirate" value="PIRATE">
+    </div>
+
+  </div>
+
+
+  <button id="PatternsBtn" class="w3-btn-block w3-left-align w3-border">
+    Letter Patterns
+  </button>
+  <div    id="PatternsSection"    class="w3-accordion-content w3-container w3-hide w3-large">
+
+    <div class="w3-full">
+      <p>
+        Once learners recognise regular common patterns, e.g:
+      </p>
+    
+     <div id ="PatternsBoxes" class="w3-padding-medium w3-col  l4 m4 s6">
+       <input class="w3-check" type="checkbox" id="magicE" value="MAGICE">
+       <label for="magicE">Magic E </label>
+      </div>
+    <div class="w3-col l12">
+     <p>, they can be left un-augmented.</p>
+     
+    </div>
+  </div>
+  </div>
+
+  <button id="AugmentationsBtn" class="w3-btn-block w3-left-align w3-border">
+    Augmentations
+    </button>
+  <div    id="AugmentationsSection"    class="w3-accordion-content w3-container w3-hide w3-padding">
+    <h3  class="w3-col l12">Vowels</h3>
+ 
+    <h4  class="w3-col l12">Name of Vowel</h4>
+
+    <div   id="NamedVowelsHere" class="w3-full w3-padding">
+    </div>
+
+    <h4  class="w3-col l12">Silent Vowels</h4>
+
+    <div   id="SilentVowelsHere" class="w3-full w3-padding">
+    </div>
+
+    <h4  class="w3-col l12">Schwas</h4>
+
+    <div   id="SchwasHere" class="w3-full w3-padding">
+    </div>
+
+    <h4  class="w3-col l12">Others</h4>
+
+    <div   id="VowelsHere" class="w3-full w3-padding">
+    </div>
+ 
+    <h3 class="w3-col l12">Consonants</h3>
+    
+    <div   id="ConsonantsHere" class="w3-full w3-padding">
+
+    </div>
+    </div>
+  
+  <button id="SoundsBtn"   class="w3-btn-block w3-left-align w3-border">
+      Sounds</button>
+  <div    id="SoundsSection"       class="w3-accordion-content w3-container w3-hide">
+    <h3>Vowels</h3>
+
+      <div class="w3-padding-medium w3-col  l6 m6 s12">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" >àèìòùħ</button>
+      </div>
+        
+      <div class="w3-padding-medium w3-col  l6 m6 s12">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/@.wav">áéíóú</button>
+      </div>
+    
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/lcurly.wav">a
+        </button>
+      </div>
+      
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/e.wav">e ã
+        </button>
+      </div>
+      
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/I.wav">i ė ẏ
+        </button>
+      </div>
+      
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/o.wav">o
+        </button>
+      </div>
+      
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/VV.wav">u ő
+        </button>
+      </div>
+    
+
+    
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/eI.wav">â
+       </button>
+       </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/idots.wav">ê ï ý&nbsp;
+       </button>
+    </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/aI.wav">î ŷ
+       </button></div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/@U.wav">ô
+       </button>
+     </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/U.wav">û
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/OI.wav">σ
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/UU.wav">ō ū
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/aU.wav">õ
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/Odots.wav">ø å Å
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/udots.wav">ö ü ë
+       </button>
+      </div>
+    
+
+    
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/3dots.wav">ŕ
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/Adots.wav">ā Ā
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/I@.wav">iŕ ėŕ
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/e@.wav">eŕ ãŕ
+       </button>
+      </div>
+     <div class="w3-padding-medium w3-col  l3 m3 s6">
+       <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/U@.wav">yŕ
+       </button>
+      </div>
+    
+ 
+    <h3 >Consonants</h3>
+       <div class="w3-padding-medium w3-col  l3 m3 s6">
+         <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/b.wav">b B
+         </button>
+        </div>
+        <div class="w3-padding-medium w3-col  l3 m3 s6">
+          <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/k.wav">c k q
+          </button>
+          </div>
+        <div class="w3-padding-medium w3-col  l3 m3 s6">
+          <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/tS.wav">ĉ ť
+          </button>
+        </div>
+        <div class="w3-padding-medium w3-col  l3 m3 s6">
+          <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/d.wav">d D
+          </button>
+        </div>
+        <div class="w3-padding-medium w3-col  l3 m3 s6">
+          <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/f.wav">f F þ
+          </button>
+        </div>
+        <div class="w3-padding-medium w3-col  l3 m3 s6">
+          <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/g.wav">g G
+          </button>
+        </div>
+      
+
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/h.wav">h H
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/dZ.wav">j ĝ
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/l.wav">l L
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/m.wav">m M
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/n.wav">n N
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/NN.wav">ñ
+        </button>
+      </div>
+    
+
+    
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/p.wav">p
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/r.wav">r R
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/s.wav">s ç
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/SS.wav">ŝ ţ
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/t.wav">t T ð
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/TT.wav">th
+        </button>
+      </div>
+    
+
+    
+      <div class="w3-padding-medium w3-col  l3 m3 s6">
+        <button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/DD.wav">τh
+        </button>
+      </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6"><button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/v.wav">v
+      </button>
+    </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6"><button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/w.wav">w υ
+      </button>
+    </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6"><button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/j.wav">y ĩ
+      </button>
+    </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6"><button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/z.wav">z ś
+      </button>
+    </div>
+      <div class="w3-padding-medium w3-col  l3 m3 s6"><button class="w3-btn w3-border w3-hover-grayscale w3-border w3-hover-grayscale-black w3-xlarge w3-orange w3-text-shadow w3-round-xlarge" id="wavs/ZZ.wav">zye
+      </button>
+    </div>
+    <br/><br/>
+ </div>
+   <button id="ExtrasBtn"   class="w3-btn-block w3-left-align w3-border">
+      Extras</button>
+  <div    id="ExtrasSection"       class="w3-accordion-content w3-container w3-hide">
+  <a href="phonic-chart.html">Phonic Chart (Example Words)</a>
+  <br/>
+ </div>
+ <div class="class=w3-container  w3-margin w3-section ">
+
+        <small>
+        <p>
+        Here you can define how much augmentation; which augmentations; and 
+        which patterns (i.e 'sh', 'ch', 'er', 'ing', 'tion',...) to recognise, or which augmentations to ignore.
+        </p>
+        <p>
+        Or you could go straight to the <a href="BookA.html" class="w3-xlarge">stories</a> using the default settings 
+            . We hope you enjoy the collection.
+        </p>
+        </small>
+</div>
+</body>
+</html>

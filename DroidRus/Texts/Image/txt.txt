@@ -1,0 +1,46 @@
+<b>Изображение</b>
+app.CreateImage(изображение, ширина, высота, опции) - создаёт изображение<div class="block">
+<b>Опции:</b>
+"ScaleCenter"
+"Fix"
+</div>
+
+<b>Особые методы:</b>
+GetPixelData( формат, слева, сверху, ширина, высота)
+ Clear() - очищает изображение
+ 
+<div class="block">
+<b>Рисует:</b>
+DrawArc(x1, y1, x2, y2, start, sweep)
+DrawCircle(x, y, радиус) - окружность, с указанным центром и радиусом
+DrawImage(image, x, y, w, h, angle) - изображение
+DrawImageMtx(image, matrix)
+DrawLine(x1, y1, x2, y2) - линии по указанным точкам
+DrawPoint(x, y) - точку на изображении
+DrawRectangle(x1, y1, x2, y2, ?) - прямоугльник
+DrawText(text, x, y) - текст на изображении
+</div> 
+
+MeasureText(txt) - рассчитывает ширину и высоту текста
+Move(x, y) - смешяет изображение
+Reset( x, y) - сбросить масштаб изображения
+Rotate(угол поворота, X тойки, Y точки) - вращает изображение на указанныей градус, относительно укзанной точки экрана
+Save(название файла )
+
+<div class="block">
+<b>Устанавливает:</b>
+SetAlpha(alpha) - прозрачность
+SetAutoUpdate(onoff) - автообновление
+SetColor(цвет) - заливает изображение
+SetImage(изображение, ширина, высота) - изображение
+SetLineWidth(ширина) - ширину линии для рисования
+SetMaxRate(ms)
+SetOnLoad(callback) - функцию при окончании загрузки картинки
+SetPaintColor(цвет) - цвет кисти для рисования
+SetPaintStyle(стиль) - стиль линии для рисования (line)
+</div>
+
+Scale(x, y) - масштабирует изображение
+Skew(x, y)
+Transform(matrix)
+Update() - обновляет изображение

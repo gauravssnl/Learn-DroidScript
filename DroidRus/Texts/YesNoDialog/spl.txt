@@ -1,0 +1,8 @@
+function OnStart(){
+  yesno = app.CreateYesNoDialog( "Выйти?" );
+  yesno.SetButtonText("Да","Нет");
+  yesno.SetOnTouch( function(ev){
+    if(ev=="yes")app.Exit();
+  });
+  yesno.Show();
+}

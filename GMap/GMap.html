@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+	
+<script>
+    //Called after application is started.
+    function OnStart()
+    {
+        app.ShowPopup( "HTML Rocks!" );
+    }
+</script>
+
+<style>
+	body { background-color: #ffffff; }
+    .hello 
+    { 
+        font-size: 42; 
+        width: 100%;
+        margin-top: 2em;
+        text-align: center;
+        color: blue;
+    }
+    
+     #map {
+        height: 400px;
+        width: 100%;
+       }
+</style>
+
+<body onload="app.Start()">
+
+	<div class=hello> Hello World! </div>
+	
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+  spin = app.CreateSpinner( "Элемент 1,Элемент 2,Элемент 3", 0.4 );
+  spin.SetOnChange( ShowSelection );
+  spin.SelectItem( "Элемент 1" );
+  lay.AddChild( spin );
+
+  app.AddLayout( lay );
+}
+
+function ShowSelection( item )
+{
+  app.ShowPopup( item );
+}

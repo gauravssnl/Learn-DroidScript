@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+	
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAge3AAVJWmq1EXdXJ_N8pn9WSWFnyt8M8",
+    authDomain: "jschat-f97c2.firebaseapp.com",
+    databaseURL: "https://jschat-f97c2.firebaseio.com",
+    projectId: "jschat-f97c2",
+    storageBucket: "jschat-f97c2.appspot.com",
+    messagingSenderId: "235246729950"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+    //Called after application is started.
+    function OnStart()
+    {
+        app.ShowPopup( "HTML Rocks!" );
+    }
+</script>
+
+<style>
+	body { background-color: #ffffff; }
+    .hello 
+    { 
+        font-size: 42; 
+        width: 100%;
+        margin-top: 2em;
+        text-align: center;
+        color: blue;
+    }
+</style>
+
+<body onload="app.Start()">
+
+	<div class=hello> Hello World! </div>
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+  edt = app.CreateTextEdit( "Текстовый редактор", 0.8, 0.3 );
+  edt.SetOnChange( edt_OnChange );
+  lay.AddChild( edt );
+
+  txt = app.CreateText( "", 0.8, 0.3 );
+  txt.SetMargins( 0, 0.02, 0, 0 );
+  lay.AddChild( txt );
+
+  app.AddLayout( lay );
+}
+
+function edt_OnChange()  
+{
+  txt.SetText( edt.GetText() );
+}

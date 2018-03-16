@@ -1,0 +1,16 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+  img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 );
+  img.SetOnTouch( img_OnTouch );
+  lay.AddChild( img );
+
+  app.AddLayout( lay );
+}
+
+function img_OnTouch( ev )
+{
+  if( ev.action=="Down" )
+    app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" );
+}

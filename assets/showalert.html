@@ -1,0 +1,120 @@
+
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>AlertPlus - Show Alert</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<style>
+		  .label { font-size: 1.25rem; font-weight: 650; padding: 8px; background-color: #6c757d; color: #fff; border-radius: 8px; }
+		  .label + p { margin-bottom: 5px; font-size: 1rem; color: #000; text-decoration: underline; }
+		  .mark { color: #17a2b8; }
+		  .mark > span { color: #007bff; }
+</style>
+
+  </head> 
+
+  <body> 
+
+	<div data-role="page" data-theme="a">
+
+	  <div data-role="header" data-theme="c" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+		<h1>AlertPlus - Show Alert</h1>
+	  </div><!-- /header -->
+
+	  <div data-role="content">
+		
+		<h1>Show Alert</h1>
+		
+		<p>Method:</p>
+		
+		<p class="samp">ShowAlert( Message, Title, ButtonText, theme );</p>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+		  <h3>Show Alert - Light</h3>
+		  <div id="c1" style="font-size:70%">
+			app.LoadPlugin( "AlertPlus" );<br>
+			<br>
+			function OnStart()<br>
+			{<br>
+			<b id="c2"  style="font-size:100%">
+			  &nbsp;&nbsp;ap = app.CreateAlertPlus();<br>
+			  <br>
+			  &nbsp;&nbsp;ap.ShowAlert( "MyMessage", "MyTitle", "Ok", ap.THEME_LIGHT );<br>
+			</b><br>
+			}<br>
+
+		  </div>
+		  <div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c2)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c1)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(c1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+		  </div>
+		</div>
+		
+		<br>
+		  
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+		  <h3>Show Alert - Basic</h3>
+		  <div id="c1b" style="font-size:70%">
+			app.LoadPlugin( "AlertPlus" );<br>
+			<br>
+			function OnStart()<br>
+			{<br>
+			<b id="c2b"  style="font-size:100%">
+			  &nbsp;&nbsp;ap = app.CreateAlertPlus();<br>
+			  <br>
+			  &nbsp;&nbsp;ap.ShowAlert( "MyMessage", "MyTitle", "Ok", ap.THEME_BASIC );<br>
+			</b><br>
+			}<br>
+
+		  </div>
+		  <div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c2b)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c1b)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(c1b)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+		  </div>
+		</div>
+		
+		<br>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+		  <h3>Show Alert - Dark</h3>
+		  <div id="c1d" style="font-size:70%">
+			app.LoadPlugin( "AlertPlus" );<br>
+			<br>
+			function OnStart()<br>
+			{<br>
+			<b id="c2d"  style="font-size:100%">
+			  &nbsp;&nbsp;ap = app.CreateAlertPlus();<br>
+			  <br>
+			  &nbsp;&nbsp;ap.ShowAlert( "MyMessage", "MyTitle", "Ok", ap.THEME_DARK );<br>
+			</b><br>
+			}<br>
+
+		  </div>
+		  <div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c2d)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c1d)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(c1d)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+		  </div>
+		</div>
+		
+		<br>
+		
+		<span class="label">Method</span>
+		
+		<br>
+		  
+		<p class="samp">Cancelable true progress outside touch dismiss dialog. Cancelable false no cancel dialog</p>
+		
+	  </div><!-- /content -->
+
+	</div><!-- /page -->
+
+  </body>
+</html>

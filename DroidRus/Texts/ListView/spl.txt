@@ -1,0 +1,11 @@
+function OnStart()
+{
+  lvw = app.CreateListView( "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Days" );
+  lvw.SetOnTouch( lvw_OnTouch );
+  lvw.Show();
+}
+
+function lvw_OnTouch( item )
+{
+  app.ShowPopup( item );
+}

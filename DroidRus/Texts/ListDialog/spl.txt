@@ -1,0 +1,11 @@
+function OnStart()
+{
+  dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
+  dlg.SetOnTouch( dlg_OnTouch );
+  dlg.Show();
+}
+
+function dlg_OnTouch( item )
+{
+  app.ShowPopup( item );
+}

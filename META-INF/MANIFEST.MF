@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: assets/showpopup.html
+SHA1-Digest: WowBR8Q145uCFFXuCbd/GHsCpCI=
+
+Name: assets/AlertPlus.inc
+SHA1-Digest: 7kVzl14vEVcGlZd5eZFJsPpNj9A=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 7iV1Y16AE4D/iDxZfYOPVFKJO54=
+
+Name: res/drawable/icon.png
+SHA1-Digest: dLASw6MOdhNm5oeQjQQWJvRqjQY=
+
+Name: assets/showalert.html
+SHA1-Digest: D0X0F6es7kRwlcEqGbN67/wrgu8=
+
+Name: resources.arsc
+SHA1-Digest: o7U8cHS3w9lB/h/MVe7jUliPyCU=
+
+Name: assets/AlertPlus.html
+SHA1-Digest: b2gXA6XAFug3x0+tqy/gwrjsldE=
+
+Name: classes.dex
+SHA1-Digest: G0WwNYxpAI6e5qbYpYqzrA4ll5Y=
+
+Name: assets/createalert.html
+SHA1-Digest: LAIWXM1ZhjlxWJuDSc+KvUGVVrQ=
+
+Name: assets/showprogress.html
+SHA1-Digest: dZ9VZb5OdJJLo5nyPhsHj6w9PyM=
+
+Name: assets/createprogress.html
+SHA1-Digest: 9gYuw8VVXPQUyTelrkCQU2LJzZs=
+

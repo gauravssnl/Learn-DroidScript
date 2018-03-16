@@ -1,0 +1,1022 @@
+
+<head>
+    <meta name="viewport" content="width=device-width">
+  <script src='file:///android_asset/app.js'></script>
+  <script src="jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="w3.css">
+<style type="text/css">
+<!--
+body {margin-left: 15%; margin-right: 15%; background-color: white; font-size:1.4em; }
+img {border: 0;margin-left:5%;max-width:90%}
+h1,h2 class="w3-text-shadow ctr",h3 {text-align: center;}
+.ind {margin-left: 10%; margin-right: 10%;}
+hr {text-align: center; width: 50%;}
+.ctr {text-align: center;}
+-->
+</style>
+
+
+
+<style>
+	body { background-color: #f0fff0; }
+    .hello 
+    { 
+        font-size: 42; 
+        width: 100%;
+        margin-top: 2em;
+        text-align: center;
+        color: blue;
+    }
+</style>
+    <script src="diacritics.js"></script>
+    <script src="settings.js"></script>
+    <script src="background.js"></script> 
+<script>
+ $(document).ready(function(){
+     app.ShowProgress('augmenting...');
+     settings.layout=window.localStorage['layout'];
+     lexicon['swans']={a:'swans!swonś',f:'8607'};
+     settings['lower-cutoff']=window.localStorage['lower-cutoff'];
+     AugmentPage(getCodeStr(),function() {app.HideProgress()});
+     });
+
+ </script>
+</head>
+
+<!--<body onload="app.Start()" >-->
+<body class="w3-xlarge">
+<div>
+<!--<div oncontextmenu="dialog1()" contextmenu="mymenu">-->
+
+<!--<button onclick="alert(document.getElementsByTagName('head')[0].innerHTML)" >Click Me you cnut</button> 
+
+<h1 class="w3-text-shadow  ctr">A PRIMARY READER</h1>
+
+<h2 class="w3-text-shadow ctr">Old-time Stories, Fairy Tales and Myths Retold by Children</h2>
+
+<h3 class="ctr">
+By
+</h3>
+
+<h2 class="w3-text-shadow ctr">E. LOUISE SMYTHE</h2>
+
+
+
+<br>
+-->
+
+
+<h2 class="w3-text-shadow ctr">CONTENTS.</h2>
+
+<p class="ctr">
+<a href="#i">THE UGLY DUCKLING</a>
+</p>
+
+<p class="ctr">
+<a href="#ii">THE LITTLE PINE TREE</a>
+</p>
+
+<p class="ctr">
+<a href="#iii">THE LITTLE MATCH GIRL</a>
+</p>
+
+<p class="ctr">
+<a href="#iv">LITTLE RED RIDING-HOOD</a>
+</p>
+
+<p class="ctr">
+<a href="BookB.html#v">THE APPLES OF IDUN</a>
+</p>
+
+<p class="ctr">
+<a href="BookB.html#vi">HOW THOR GOT THE HAMMER</a>
+</p>
+
+<p class="ctr">
+<a href="BookB.html#vii">THE HAMMER LOST AND FOUND</a>
+</p>
+
+<p class="ctr">
+<a href="BookC.html#viii">THE STORY OF THE SHEEP</a>
+</p>
+
+<p class="ctr">
+<a href="BookC.html#ix">THE GOOD SHIP ARGO</a>
+</p>
+
+<p class="ctr">
+<a href="BookC.html#x">JASON AND THE HARPIES</a>
+</p>
+
+<p class="ctr">
+<a href="BookC.html#xi">THE BRASS BULLS</a>
+</p>
+
+<p class="ctr">
+<a href="BookC.html#xii">JASON AND THE DRAGON</a>
+</p>
+
+<br>
+<br>
+
+
+<p class="ctr">
+<a href="Img/006.png"><img src="Img/006.png" alt="THEY DRESSED THOR LIKE FREYJA"></a>
+</ttp>
+
+<br>
+<br>
+<br>
+
+<h2 class="w3-text-shadow ctr"><a name="i">THE UGLY DUCKLING.</a></h2>
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-large w3-centered w3-card-2">
+<tbody><tr><td width="33%">under</td><td width="33%">broke</td><td width="33%">does</td></tr>
+<tr><td width="33%">keep</td><td width="33%">only</td><td width="33%">turkey</td></tr>
+<tr><td width="33%">warm</td><td width="33%">ugly</td><td width="33%">water</td></tr>
+</tbody></table>
+
+<p>
+A duck made her nest under some leaves.
+</p>
+
+<p class="ctr">
+<a href="Img/007.png"><img src="Img/007.png" alt="THE DUCK'S NEST"></a>
+</p>
+
+<p>
+She sat on the eggs to keep them warm.
+</p>
+
+<p>
+At last the eggs broke, one after the other. Little ducks came out.
+</p>
+
+<p>
+Only one egg was left. It was a very large one.
+</p>
+
+<p>
+At last it broke, and out came a big, ugly duckling.
+</p>
+
+<p>
+"What a big duckling!" said the old duck. "He does not look like
+us. Can he be a turkey?--We will see. If he does not like the water,
+he is not a duck."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">mother</td><td width="33%">jumped</td><td width="33%">duckling</td></tr>
+<tr><td width="33%">splash</td><td width="33%">swim</td><td width="33%">bigger</td></tr>
+<tr><td width="33%">called</td><td width="33%">began</td><td width="33%">little</td></tr>
+</tbody></table>
+
+<p>
+The next day the mother duck took her ducklings to the pond.
+</p>
+
+<p class="ctr">
+<a href="Img/009.png"><img src="Img/009.png" alt="THE DUCK TAKES HER DUCKLINGS TO SWIM"></a>
+</p>
+
+<p>
+Splash! Splash! The mother duck was in the water. Then she called
+the ducklings to come in. They all jumped in and began to swim. The
+big, ugly duckling swam, too.
+</p>
+
+<p>
+The mother duck said, "He is not a turkey. He is my own little duck.
+He will not be so ugly when he is bigger."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">yard</td><td width="33%">alone</td><td width="33%">while</td></tr>
+<tr><td width="33%">noise</td><td width="33%">hurt</td><td width="33%">that</td></tr>
+<tr><td width="33%">eating</td><td width="33%">know</td><td width="33%">want</td></tr>
+</tbody></table>
+
+<p>
+Then she said to the ducklings, "Come with me. I want you to see the
+other ducks. Stay by me and look out for the cat."
+</p>
+
+<p>
+They all went into the duck yard. What a noise the ducks made!
+</p>
+
+<p>
+While the mother duck was eating a big bug, an old duck bit the ugly
+duckling.
+</p>
+
+<p>
+"Let him alone," said the mother duck. "He did not hurt you."
+</p>
+
+<p class="ctr">
+<a href="Img/011.png"><img src="Img/011.png" alt="'HE DID NOT HURT YOU,' SAID THE MOTHER DUCK"></a>
+</p>
+
+<p>
+"I know that," said the duck, "but he is so ugly, I bit him."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">lovely</td><td width="33%">help</td><td width="33%">there</td></tr>
+<tr><td width="33%">walked</td><td width="33%">bushes</td><td width="33%">afraid</td></tr>
+</tbody></table>
+
+<p>
+The next duck they met, said, "You have lovely ducklings. They
+are all pretty but one. He is very ugly."
+</p>
+
+<p class="ctr">
+<a href="Img/012.png"><img src="Img/012.png" alt="'YOUR CHILDREN ARE ALL PRETTY EXCEPT ONE.'"></a>
+</p>
+
+<p>
+The mother duck said, "I know he is not pretty. But he is very good."
+</p>
+
+<p>
+Then she said to the ducklings, "Now, my dears, have a good time."
+</p>
+
+<p>
+But the poor, big, ugly duckling did not have a good time.
+</p>
+
+<p>
+The hens all bit him. The big ducks walked on him.
+</p>
+
+<p>
+The poor duckling was very sad. He did not want to be so ugly. But
+he could not help it.
+</p>
+
+<p>
+He ran to hide under some bushes. The little birds in the bushes were
+afraid and flew away.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">because</td><td width="33%">housexx</td><td width="33%">would</td></tr>
+<tr><td width="33%">away</td><td width="33%">hard</td><td width="33%">lived</td></tr>
+</tbody></table>
+
+<p>
+"It is all because I am so ugly," said the duckling. So he ran away.
+</p>
+
+<p>
+At night he came to an old housexx. The housexx looked as if it would fall
+down. It was so old. But the windxx blew so hard that the duckling went
+into the housexx.
+</p>
+
+<p class="ctr">
+<a href="Img/014.png"><img src="Img/014.png" alt="THE UGLY DUCKLING FINDS THE OLD HOUSE"></a>
+</p>
+
+<p>
+An old woman lived there with her cat and her hen.
+</p>
+
+<p>
+The old woman said, "I will keep the duck. I will have some eggs."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">growl</td><td width="33%">walk</td></tr>
+<tr><td width="33%">corner</td><td width="33%">animals</td></tr>
+</tbody></table>
+
+<p>
+The next day, the cat saw the duckling and began to growl.
+</p>
+
+<p>
+The hen said, "Can you lay eggs?" The duckling said, "No."
+</p>
+
+<p>
+"Then keep still," said the hen. The cat said, "Can you growl?"
+</p>
+
+<p class="ctr">
+<a href="Img/015.png"><img src="Img/015.png" alt="THE CAT SAID, 'CAN YOU GROWL?'"></a>
+</p>
+
+<p>
+"No," said the duckling.
+</p>
+
+<p>
+"Then keep still," said the cat.
+</p>
+
+<p>
+And the duckling hid in a corner. The next day he went for a walk. He
+saw a big pond. He said, "I will have a good swim."
+</p>
+
+<p>
+But all of the animals made fun of him. He was so ugly.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">summer</td><td width="33%">away</td><td width="33%">cake</td></tr>
+<tr><td width="33%">winter</td><td width="33%">swans</td><td width="33%">spring</td></tr>
+<tr><td width="33%">flew</td><td width="33%">bread</td><td width="33%">leaves</td></tr>
+</tbody></table>
+
+<p>
+The summer went by.
+</p>
+
+<p>
+Then the leaves fell and it was very cold. The poor duckling had a
+hard time.
+</p>
+
+<p>
+It is too sad to tell what he did all winter.
+</p>
+
+<p>
+At last it was spring.
+</p>
+
+<p>
+The birds sang. The ugly duckling was big now.
+</p>
+
+<p>
+One day he flew far away.
+</p>
+
+<p class="ctr">
+<a href="Img/017.png"><img src="Img/017.png" alt="'OH, SEE THE LOVELY SWAN!'"></a>
+</p>
+
+<p>
+Soon he saw three white swans on the lake.
+</p>
+
+<p>
+He said, "I am going to see those birds. I am afraid they will kill
+me, for I am so ugly."
+</p>
+
+<p>
+He put his head down to the water. What did he see? He saw himself in
+the water. But he was not an ugly duck. He was a white swan.
+</p>
+
+<p>
+The other swans came to see him.
+</p>
+
+<p>
+The children said, "Oh, see the lovely swans. The one that came last
+is the best."
+</p>
+
+<p>
+And they gave him bread and cake.
+</p>
+
+<p>
+It was a happy time for the ugly duckling.
+<br>
+<br>
+<br>
+</p>
+
+<h2 class="w3-text-shadow ctr"><a name="ii">THE LITTLE PINE TREE</a></h2>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">pine</td><td width="33%">leaves</td><td width="33%">other</td></tr>
+<tr><td width="33%">woods</td><td width="33%">needles</td><td width="33%">better</td></tr>
+<tr><td width="33%">fairy</td><td width="33%">gold</td><td width="33%">sleep</td></tr>
+</tbody></table>
+
+<p>
+A little pine tree was in the woods.
+</p>
+
+<p>
+It had no leaves. It had needles.
+</p>
+
+<p>
+The little tree said, "I do not like needles. All the other trees in
+the woods have pretty leaves. I want leaves, too. But I will have
+better leaves. I want gold leaves."
+</p>
+
+<p>
+Night came and the little tree went to sleep. A fairy came by and gave
+it gold leaves.
+</p>
+
+<p class="ctr">
+<a href="Img/020.png"><img src="Img/020.png" alt="THE FAIRY GIVES THE PINK TREE GOLD LEAVES"></a>
+</p>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">woke</td><td width="33%">cried</td><td width="33%">glass</td></tr>
+<tr><td width="33%">little</td><td width="33%">again</td><td width="33%">pretty</td></tr>
+</tbody></table>
+
+<p>
+When the little tree woke it had leaves of gold.
+</p>
+
+<p>
+It said, "Oh, I am so pretty! No other tree has gold leaves."
+</p>
+
+<p>
+Night came.
+</p>
+
+<p>
+A man came by with a bag. He saw the gold leaves. He took them all and
+put them into his bag.
+</p>
+
+<p>
+The poor little tree cried, "I do not want gold leaves again. I will
+have glass leaves."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">night</td><td width="33%">sunshine</td><td width="33%">bright</td></tr>
+<tr><td width="33%">looked</td><td width="33%">windxx</td><td width="33%">blew</td></tr>
+</tbody></table>
+
+<p>
+So the little tree went to sleep. The fairy came by and put the glass
+leaves on it.
+</p>
+
+<p>
+The little tree woke and saw its glass leaves.
+</p>
+
+<p>
+How pretty they looked in the sunshine! 'No other tree was so bright.
+</p>
+
+<p>
+Then a windxx came up. It blew and blew.
+</p>
+
+<p>
+The glass leaves all fell from the tree and were broken.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">again</td><td width="33%">green</td></tr>
+<tr><td width="33%">goat</td><td width="33%">hungry</td></tr>
+</tbody></table>
+
+<p>
+Again the little tree had no leaves. It was very sad, and said, "I
+will not have gold leaves and I will not have glass leaves. I want
+green leaves. I want to be like the other trees."
+</p>
+
+<p>
+And the little tree went to sleep. When it woke, it was like other
+trees. It had green leaves.
+</p>
+
+<p>
+A goat came by. He saw the green leaves on the little tree. The
+goat was hungry and he ate all the leaves.
+</p>
+
+<p class="ctr">
+<a href="Img/023.png"><img src="Img/023.png" alt="THE GOAT EATS THE GREEN LEAVES"></a>
+</p>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">happy</td><td width="33%">best</td></tr>
+</tbody></table>
+
+<p>
+Then the little tree said, "I do not want any leaves. I will not
+have green leaves, nor glass leaves, nor gold leaves. I like my
+needles best."
+</p>
+
+<p class="ctr">
+<a href="Img/024.png"><img src="Img/024.png" alt="THE PINE TREE WITH NEEDLES"></a>
+</p>
+
+<p>
+And the little tree went to sleep. The fairy gave it what it wanted.
+</p>
+
+<p>
+When it woke, it had its needles again. Then the little pine tree
+was happy.
+<br>
+<br>
+<br>
+</p>
+
+<h2 class="w3-text-shadow ctr"><a name="iii">THE LITTLE MATCH GIRL.</a></h2>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">almost</td><td width="33%">match</td><td width="33%">across</td></tr>
+<tr><td width="33%">dark</td><td width="33%">running</td><td width="33%">bare</td></tr>
+<tr><td width="33%">year</td><td width="33%">slippers</td><td width="33%">fell</td></tr>
+</tbody></table>
+
+<p>
+It was very cold. The snow fell and it was almost dark.
+</p>
+
+<p>
+It was the last day of the year.
+</p>
+
+<p>
+A little match girl was running in the street. Her name was Gretchen.
+She had no hat on.
+</p>
+
+<p>
+Her feet were bare. When she left home, she had on some big slippers
+of her mama's. But they were so large that she lost them when she ran
+across the street.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">apron</td><td width="33%">curly</td><td width="33%">lights</td></tr>
+<tr><td width="33%">bunch</td><td width="33%">about</td><td width="33%">smelled</td></tr>
+<tr><td width="33%">could</td><td width="33%">matches</td><td width="33%">cooking</td></tr>
+</tbody></table>
+
+<p>
+Gretchen had a lot of matches in her old apron.
+</p>
+
+<p>
+She had a little bunch in her hand.
+</p>
+
+<p>
+But she could not sell her matches. No one would buy them.
+</p>
+
+<p>
+Poor little Gretchen!
+</p>
+
+<p>
+She was cold and hungry.
+</p>
+
+<p>
+The snow fell on her curly hair. But she did not think about that.
+</p>
+
+<p>
+She saw lights in the houses.
+</p>
+
+<p>
+She smelled good things cooking.
+</p>
+
+<p>
+She said to herself, "This is the last night of the year."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">knew</td><td width="33%">window</td><td width="33%">fire</td></tr>
+<tr><td width="33%">money</td><td width="33%">even</td><td width="33%">pile</td></tr>
+</tbody></table>
+
+<p>
+Gretchen got colder and colder.
+</p>
+
+<p>
+She was afraid to go home. She knew her papa would whip her, if she
+did not take some money to him.
+</p>
+
+<p>
+It was as cold at home as in the street. They were too poor to have
+a fire. They had to put rags in the windows to keep out the windxx.
+</p>
+
+<p>
+Gretchen did not even have a bed. She had to sleep on a pile of rags.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">frozen</td><td width="33%">candle</td><td width="33%">sitting</td></tr>
+<tr><td width="33%">lighted</td><td width="33%">thought</td><td width="33%">stove</td></tr>
+<tr><td width="33%">near</td><td width="33%">think</td><td width="33%">step</td></tr>
+</tbody></table>
+
+<p>
+She sat down on a door step.
+</p>
+
+<p class="ctr">
+<a href="Img/028.png"><img src="Img/028.png" alt="GRETCHEN ON THE DOOR STEP"></a>
+</p>
+
+<p>
+Her little hands were almost frozen.
+</p>
+
+<p>
+She took a match and lighted it to warm her hands. The match looked
+like a little candle.
+</p>
+
+<p>
+Gretchen thought she was sitting by a big stove. It was so bright.
+</p>
+
+<p>
+She put the match near her feet, to warm them. Then the light went
+out. She did not think that she was by the stove any more.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">another</td><td width="33%">dishes</td><td width="33%">roast</td></tr>
+<tr><td width="33%">table</td><td width="33%">cloth</td><td width="33%">ready</td></tr>
+<tr><td width="33%">fork</td><td width="33%">knife</td><td width="33%">turkey</td></tr>
+</tbody></table>
+
+<p>
+Gretchen lighted another match.
+</p>
+
+<p>
+Now she thought she could look into a room. In this room was a table.
+</p>
+
+<p>
+A white cloth and pretty dishes were on the table. There was a roast
+turkey, too. It was cooked and ready to eat. The knife and fork were
+in his back. The turkey jumped from the dish and ran to the little
+girl.
+</p>
+
+<p>
+The light went out and she was in the cold and dark again.
+</p>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">Christmas</td><td width="33%">candles</td></tr>
+<tr><td width="33%">many</td><td width="33%">until</td></tr>
+</tbody></table>
+
+<p>
+Gretchen lighted another match. Then she thought she was sitting by
+a Christmas tree. Very many candles were on the tree. It was full
+of pretty things.
+</p>
+
+<p>
+Gretchen put up her little hands. The light went out.
+</p>
+
+<p>
+The lights on the Christmas tree went up, up--until she saw they
+were the stars.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">grandma</td><td width="33%">never</td><td width="33%">before</td></tr>
+<tr><td width="33%">dying</td><td width="33%">going</td><td width="33%">been</td></tr>
+</tbody></table>
+
+<p>
+Then she saw a star fall.
+</p>
+
+<p>
+"Some one is dying," said little Gretchen.
+</p>
+
+<p>
+Her grandma had been very good to the little girl. But she was dead.
+</p>
+
+<p>
+The grandma had said, "When a star falls some one is going to God."
+</p>
+
+<p>
+The little girl lighted another match. It made a big light.
+</p>
+
+<p>
+Gretchen thought she saw her grandma. She never looked so pretty
+before. She looked so sweet and happy.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">take</td><td width="33%">goes</td></tr>
+</tbody></table>
+
+<p>
+"O grandma," said the little girl, "take me. When the light goes out
+you will go away. The stove and the turkey and the Christmas tree all
+went away."
+</p>
+
+<p>
+Then Gretchen lighted a bunch of matches. She wanted to keep her
+grandma with her. The matches made it very light.
+</p>
+
+<p>
+The grandma took the little girl in her arms. They went up, up--where
+they would never be cold or hungry.
+</p>
+
+<p>
+They were with God.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">found</td><td width="33%">next</td><td width="33%">burned</td></tr>
+<tr><td width="33%">dead</td><td width="33%">froze</td><td width="33%">death</td></tr>
+</tbody></table>
+
+<p>
+The next day came.
+</p>
+
+<p>
+Some men found a little girl in the street. She was dead.
+</p>
+
+<p>
+In her hand were the burned matches.
+</p>
+
+<p>
+They said, "Poor little thing, she froze to death."
+</p>
+
+<p>
+They did not know how happy she was in heaven.
+<br>
+<br>
+<br>
+</p>
+
+<h2 class="w3-text-shadow ctr"><a name="iv">LITTLE RED RIDING-HOOD.</a></h2>
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">six</td><td width="33%">take</td><td width="33%">cake</td></tr>
+<tr><td width="33%">coat</td><td width="33%">butter</td><td width="33%">basket</td></tr>
+<tr><td width="33%">hood</td><td width="33%">always</td><td width="33%">off</td></tr>
+</tbody></table>
+
+<p>
+When May was six years old, her grandma made her a red coat with a
+hood. She looked so pretty in it that the children all called her
+"Red Riding-Hood."
+</p>
+
+<p>
+One day her mama said, "I want you to take this cake and some butter
+to grandma."
+</p>
+
+<p>
+Red Riding-Hood was very glad to go. She always had a good time at
+grandma's.
+</p>
+
+<p class="ctr">
+<a href="Img/035c.png"><img src="Img/035c.png" alt="LITTLE RED RIDING-HOOD AND HER MOTHER"></a>
+</p>
+
+<p>
+She put the things into her little basket and ran off.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">wolf</td><td width="33%">mill</td><td width="33%">shall</td></tr>
+<tr><td width="33%">going</td><td width="33%">first</td><td width="33%">wood</td></tr>
+</tbody></table>
+
+<p>
+When Red Riding-Hood came to the wood, she met a big wolf.
+</p>
+
+<p class="ctr">
+<a href="Img/036.png"><img src="Img/036.png" alt="SHE MEETS THE WOLF"></a>
+</p>
+
+<p>
+"Where are you going?" said the wolf.
+</p>
+
+<p>
+Red Riding-Hood said, "I am going to see my grandma. Mama has made
+her a cake and some butter."
+</p>
+
+<p>
+"Does she livexx far?" said the wolf.
+</p>
+
+<p>
+"Yes," said Red Riding-Hood, "in the white housexx by the mill."
+</p>
+
+<p>
+"I will go too, and we shall see who will get there first," said the
+wolf.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">short</td><td width="33%">flowers</td><td width="33%">soft</td></tr>
+<tr><td width="33%">stopped</td><td width="33%">tapped</td><td width="33%">pull</td></tr>
+<tr><td width="33%">pick</td><td width="33%">voice</td><td width="33%">string</td></tr>
+</tbody></table>
+
+<p>
+The wolf ran off and took a short way, but Red Riding-Hood stopped to
+pick some flowers.
+</p>
+
+<p>
+When the wolf got to the housexx, he tapped on the door.
+</p>
+
+<p>
+The grandma said, "Who is there?" The wolf made his voice as soft as
+he could. He said, "It is little Red Riding-Hood, grandma."
+</p>
+
+<p>
+Then the old lady said, "Pull the string and the door will open."
+</p>
+
+<p>
+The wolf pulled the string and the door opened.
+</p>
+
+<p>
+He ran in and ate the poor old lady.
+</p>
+
+<p>
+Then he jumped into her bed and put on her cap.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">tapped</td><td width="33%">thank</td><td width="33%">dear</td></tr>
+<tr><td width="33%">arms</td><td width="33%">hug</td><td width="33%">called</td></tr>
+</tbody></table>
+
+<p>
+When Red Riding-Hood tapped on the door, the wolf called out, "Who is
+there?" Red Riding-Hood said, "It is your little Red Riding-Hood,
+grandma."
+</p>
+
+<p>
+Then the wolf said, "Pull the string and the door will open."
+</p>
+
+<p>
+When she went in, she said, "Look, grandma, see the cake and butter
+mama has sent you."
+</p>
+
+<p>
+"Thank you, dear, put them on the table and come here."
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">better</td><td width="33%">hear</td><td width="33%">eyes</td></tr>
+<tr><td width="33%">ears</td><td width="33%">how</td><td width="33%">teeth</td></tr>
+<tr><td width="33%">ate</td><td width="33%">cruel</td><td width="33%">poor</td></tr>
+</tbody></table>
+
+<p>
+When Red Riding-Hood went near the bed, she said, "Oh, grandma, how
+big your arms are!"
+</p>
+
+<p>
+"The better to hug you, my dear."
+</p>
+
+<p>
+"How big your ears are, grandma."
+</p>
+
+<p>
+"The better to hear you, my dear."
+</p>
+
+<p>
+"How big your eyes are, grandma."
+</p>
+
+<p>
+"The better to see you, my dear."
+</p>
+
+<p>
+"How big your teeth are, grandma!"
+</p>
+
+<p>
+"The better to eat you."
+</p>
+
+<p>
+Then the cruel wolf jumped up and ate poor little Red Riding-Hood.
+</p>
+
+
+
+<table class="w3-table-all w3-striped w3-xlarge w3-centered w3-card-2">
+<tbody><tr><td width="33%">just</td><td width="33%">hunter</td><td width="33%">scream</td></tr>
+<tr><td width="33%">killed</td><td width="33%">heard</td><td width="33%">open</td></tr>
+</tbody></table>
+
+<p>
+Just then a hunter came by. He heard Red Riding-Hood scream. The
+hunter ran into the housexx and killed the old wolf.
+</p>
+
+<p class="ctr">
+<a href="Img/041.png"><img src="Img/041.png" alt="THE GRANDMOTHER, THE HUNTER AND LITTLE RED RIDING-HOOD"></a>
+</p>
+
+<p>
+When he cut the wolf open, out jumped Little Red Riding-Hood and
+her grandma.
+<br>
+<br>
+<br>
+</p>
+
+</body>
+</html>

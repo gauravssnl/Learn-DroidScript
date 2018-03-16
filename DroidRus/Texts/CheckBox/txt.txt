@@ -1,0 +1,14 @@
+<b>Флажок</b>
+app.CreateCheckBox(текст, ширина, высота, опции) - создаёт галочку
+ 
+<b>Особые методы:</b>
+GetChecked() - проверяет выбран или нет
+GetText() - получает текст
+
+<div class="block">
+<b>Устанавливает:</b>
+SetText() - текст
+SetTextColor() - цвет текста
+SetTextSize() - размер текста
+SetChecked(checked) - действие при выборе
+</div>

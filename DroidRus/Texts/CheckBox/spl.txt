@@ -1,0 +1,15 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+  chk = app.CreateCheckBox( "Включить" );
+  chk.SetOnTouch( ShowState );
+  lay.AddChild( chk );
+
+  app.AddLayout( lay );
+}
+
+function ShowState( isChecked )
+{
+  app.ShowPopup( isChecked, "Short" );
+}

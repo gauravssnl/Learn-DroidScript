@@ -1,0 +1,83 @@
+
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>AlertPlus - ShowPopup</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link href="css/themes/default/jquery.mobile-1.2.0.min.css" rel="stylesheet">
+	<link href="css/docs.css" rel="stylesheet">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+
+<style>
+		  .label { font-size: 1.25rem; font-weight: 650; padding: 8px; background-color: #6c757d; color: #fff; border-radius: 8px; }
+		  .label + p { margin-bottom: 5px; font-size: 1rem; color: #000; text-decoration: underline; }
+		  .mark { color: #17a2b8; }
+		  .mark > span { color: #007bff; }
+</style>
+
+  </head> 
+
+  <body> 
+
+	<div data-role="page" data-theme="a">
+
+	  <div data-role="header" data-theme="c" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+		<h1>AlertPlus - ShowPopup</h1>
+	  </div><!-- /header -->
+
+	  <div data-role="content">
+		
+		<h1>Show Popup</h1>
+		
+		<p>Note: Popup x and y center point 0</p>
+		<p class="samp">-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5</p>
+		
+		<p>Method:</p>
+		
+		<p class="samp">ShowPopup( Message, x, y, length );</p>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+		  <h3>Show Popup</h3>
+		  <div id="examp1" style="font-size:70%">
+			app.LoadPlugin( "AlertPlus" );<br>
+			<br>
+			function OnStart()<br>
+			{<br>
+			&nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>		
+			<b id="snip1"  style="font-size:100%">
+			  &nbsp;&nbsp;ap = app.CreateAlertPlus();<br>
+			  <br>
+			  &nbsp;&nbsp;ap.ShowPopup( "Hello", 0, -0.5, ap.LENGTH_LONG );<br>
+			</b><br>
+			&nbsp;&nbsp;app.AddLayout( lay );<br>
+			}<br>
+
+		  </div>
+		  <div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+		  </div>
+		</div>
+		
+		<br>
+		
+		<span class="label">Method</span>
+		
+		<br>
+		  
+		<p class="samp">No more method :)</p>
+		
+	  </div><!-- /content -->
+
+	</div><!-- /page -->
+
+  </body>
+</html>

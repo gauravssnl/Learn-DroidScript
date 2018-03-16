@@ -1,0 +1,19 @@
+function OnStart()
+{
+  lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+   web = app.CreateWebView( 0.8, 0.8 );
+   web.SetOnProgress( web_OnProgess );
+   lay.AddChild( web );
+
+   app.AddLayout( lay );
+
+   app.ShowProgress("Загрузка...");
+   web.LoadUrl( "http:///www.google.com" );
+}
+
+function web_OnProgess( progress )
+{
+   app.Debug( progress );
+   if( progress==100 ) app.HideProgress();
+}

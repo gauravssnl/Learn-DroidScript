@@ -1,0 +1,50 @@
+<b>Камера</b>
+app.CreateCameraView(ширина, высота, опции) - создаёт камеру
+
+<b>Особые методы:</b>
+AutoCapture(папка, название файла, максимальное количество)
+FindFaces(максимальное количество) - ищет лица
+
+<div class="block"> 
+<b>Получает:</b>
+GetCameraCount() - количество камер
+GetColorEffects() - эффекты
+GetImageHeight() - высоту
+GetImageWidth() - ширину
+GetMaxZoom() - максимальное приближение
+GetParameters() - параметры
+GetPictureSizes() - размер изображения
+GetPixelData(формат, слева, сверху, ширина, высота) - пиксели<div class="block"><b>Формат:</b>
+“rawbase64”
+“pngbase64”
+“jpgbase64”</div>
+GetType() - тип
+GetZoom() - приближение
+</div>
+IsRecording() - записывает ли камера true/false
+MotionMosaic(xtiles, ytiles, чувствительность, minPeriod, imageObj) - движение
+Record(имя файла, время в секундах) - записать видео
+ReportColors(список, callback, sampSize, maxRate) - получает цвета
+
+<div class="block"> 
+<b>Устанавливает:</b>
+SetColorEffect(эффект) - цветовой эффект
+SetDuplicateImage(img1, img2) - дубликат изображения
+SetFlash(on/off) - включает вспышку
+SetFocusMode(режим) - режим фокусировки
+Функцию
+SetOnFocus(callback) - при фокусе
+SetOnMotion(callback) - при движении
+SetOnPicture(callback) - при картинке
+SetOnReady(callback) - если камера готова
+SetParameter(имя, значение) - параметр
+SetPictureSize(ширина, высота) - размер изображения
+SetPreviewImage(изоражение) - предпросмотр
+SetSound(on/off) - звук при фото
+SetZoom(уровень) - приближение</div>
+
+StartPreview() - начать предпросмотр
+Stop() - остановить
+StopPreview() - остановить предпросмотр
+Stream(ip, port, качество, fps, mtu) - транслировать
+TakePicture(имя файла) - сфотографировать

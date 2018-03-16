@@ -1,0 +1,96 @@
+
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>AlertPlus - Create Alert</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<style>
+		  .label { font-size: 1.25rem; font-weight: 650; padding: 8px; background-color: #6c757d; color: #fff; border-radius: 8px; }
+		  .label + p { margin-bottom: 5px; font-size: 1rem; color: #000; text-decoration: underline; }
+		  .mark { color: #17a2b8; }
+		  .mark > span { color: #007bff; }
+</style>
+
+  </head> 
+
+  <body> 
+
+	<div data-role="page" data-theme="a">
+
+	  <div data-role="header" data-theme="c" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+		<h1>AlertPlus - CreateAlert</h1>
+	  </div><!-- /header -->
+
+	  <div data-role="content">
+
+		<h1>Create Alert</h1>
+
+		<p>Method:</p>
+
+		<p class="samp">CreateAlert( Message, Title, theme );</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+		  <h3>Create Alert</h3>
+		  <div id="c4" style="font-size:70%">
+			app.LoadPlugin( "AlertPlus" );<br>
+			<br>
+			function OnStart()<br>
+			{<br>
+			&nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+			<b id="c5"  style="font-size:100%">
+			  &nbsp;&nbsp;ap = app.CreateAlertPlus();<br>
+			  <br>
+			  &nbsp;&nbsp;at = ap.CreateAlert( "Do You Like Alert Plus", "Hello", ap.THEME_LIGHT );<br>
+			  &nbsp;&nbsp;at.SetButton( 1, "Yes, so good", at_OnResult ); // min: 1, max: 3<br>
+			  &nbsp;&nbsp;at.SetButton( 2, "A little bit", at_OnResult );<br>
+			  &nbsp;&nbsp;at.SetButton( 3, "No, bad", at_OnResult );<br>
+			  &nbsp;&nbsp;at.SetCancelable( false );<br>
+			  &nbsp;&nbsp;at.Show();<br>
+			</b><br>
+			&nbsp;&nbsp;app.AddLayout( lay );<br>
+			}<br>
+			<br>
+			&nbsp;&nbsp;function at_OnResult( tag )<br>
+			&nbsp;&nbsp;{<br><br>
+			&nbsp;&nbsp;switch( tag )<br>
+			&nbsp;&nbsp;{<br>
+			&nbsp;&nbsp;case 1: ap.ShowAlert( "Thank you :)", tag, "Ok", ap.THEME_LIGHT ); break;<br>
+			&nbsp;&nbsp;case 2: ap.ShowAlert( "Okey :|", tag, "Ok", ap.THEME_DARK ); break;<br>
+			&nbsp;&nbsp;case 3: ap.ShowAlert( "It's wrong :(", tag, "Ok", ap.THEME_BASIC ); break;<br>
+			&nbsp;&nbsp;}<br><br>
+			&nbsp;&nbsp;}<br>
+
+		  </div>
+		  <div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c5)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(c4)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(c4)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+		  </div>
+		</div>
+
+		<br>
+
+		<span class="label">Method</span>
+
+		<br>
+		  
+		<ul data-role="listview" data-inset="true">
+		  <li>Set Icon: SetIcon( src );</li>
+		  <li>Set Title/Message: SetTitle( "string" ); SetMessage( "string" );</li>
+		  <li>Add Button: SetButton( tag, "Name", function );</li>
+		  <li>Dismiss: Dismiss();</li>
+		  <li>Set On Dismiss: SetOnDismiss( functton );</li>
+		  <li>Set Cancelable: SetCancelable( true/false );</li>
+		</ul>
+
+	  </div><!-- /content -->
+
+	</div><!-- /page -->
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
+	
+    var tabs = app.CreateTabs( "вкладка 1,вкладка 2,вкладка 3", 1, 1, "VCenter" );
+    tabs.SetOnChange( tabs_OnChange ); 
+    lay.AddChild( tabs ); 
+    
+    lay1 = tabs.GetLayout( "вкладка 1" );
+    btn = app.CreateButton( "кнопка" );
+    lay1.AddChild( btn );
+    
+    lay2 = tabs.GetLayout( "вкладка 2" );
+    chk = app.CreateCheckBox( "флажок" );
+    lay2.AddChild( chk );
+	
+	app.AddLayout( lay );
+}
+
+function tabs_OnChange( name )
+{
+    app.ShowPopup( name );
+}

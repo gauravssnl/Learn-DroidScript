@@ -1,0 +1,421 @@
+<html>
+
+<head>
+    <title>three.js css3d - panorama - deviceorientation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            cursor: move;
+            overflow: hidden;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        #info {
+            position: absolute;
+            width: 100%;
+            color: #ffffff;
+            padding: 5px;
+            font-family: Monospace;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <script src='file:///android_asset/app.js'></script>
+    <script src="Misc/three.js"></script>
+    <script src="Misc/DeviceOrientationControls.js"></script>
+    <script src="Misc/GeometryUtils.js"></script>
+    <script>
+        /*  
+                    VOICE COMMANDS:
+                  
+                    
+                    'web photos'  -- Open examples from the web links
+                    'local photos' -- Open local device photos (you must set your own 360 photos path)
+                    'next'          open next picture
+                    'back'          open last picture
+                    'stop'          freeze rendering
+                    'okay'          keep rendering 
+                    'any photo'     open a random photo
+                    'exit'          exit application
+                    
+                    ***For 3d view(images) : you must set them without headset 
+                    (you must have a set left and right pictures)
+                    'open left'     open and set left picture
+                    'open right'    open and set right picture
+                    
+                    **I Had to modify DeviceOrientationControls.js to read gamma angle,
+                      for a reason it only gives you acces to alpha.
+                    
+                    */
+
+    </script>
+    <script>
+        app.SetOrientation("Landscape");
+        webpics = [];
+        webpics.push('Img/defaultpanorama.jpg');
+        webpics.push('http://planetside.co.uk/wp-content/uploads/2016/09/HangarLastFrame.jpg');
+        webpics.push('https://i.ytimg.com/vi/Zsw9xVT3CSE/maxresdefault.jpg');
+        webpics.push('https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/09/Venice.Still001.jpeg');
+        webpics.push('https://i0.wp.com/ivrpa.org/wp-content/uploads/2015/06/Vritual-tour-Olimia-wellness.jpg?resize=800%2C400');
+        webpics.push('https://i.ytimg.com/vi/YlPhviNqlog/maxresdefault.jpg');
+        webpics.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94z2Lzw23a2321sx13mvzKp6y0jXbqCK4n3J3yMnI48TRwXAO');
+        webpics.push('http://www.newzealandvirtualtour.com/wp-content/uploads/2017/03/waiheke-island-new-zealand-360-panoramic-photo-by-christian-kleiman-www.christiankleiman.com-24.png');
+        webpics.push('http://www.benidormvirtualtour.com/wp-content/uploads/2014/08/benidorm-virtual-tour-by-christian-kleiman-www.christiankleiman.com-09.png');
+        webpics.push('https://assets.vrfocus.com/uploads/2015/06/GE360-3.jpeg');
+        webpics.push('https://i0.wp.com/ivrpa.org/wp-content/uploads/2015/05/Nacpan.jpg?resize=800%2C400');
+        webpics.push('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HFtrjLTin0lfw6u/atm00351-australia-twelve-apostles-4096x2048-30fps-40mbs-h264-40-sec-colour_rxEmqibMe_thumbnail-full02.png');
+        webpics.push('https://cdn-images-1.medium.com/max/2000/1*uOYaFwyzc2g6auRt8P7XWw.jpeg');
+        webpics.push('https://media.wired.com/photos/5932fb7fa30e27707249b370/master/w_7878,c_limit/13439-402175-cfaztl7xkxxfl35-VR_Panorama_Times_Square-1.jpg');
+        webpics.push('http://yorkshireairmuseum.org/wp-content/uploads/2011/03/halifax_1_jpeg11.jpg');
+        webpics.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdYTqkP2IY-QhbFsyo1wfkmVitUzvIlgNkaKYJfaNBeep8R_T6');
+        webpics.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7146mvbLxpna1YJJZvXs3i8j_d6830OLjdAWVJF8lntBXsJwojg');
+        webpics.push('https://i.ytimg.com/vi/BFnxz3pUOFY/maxresdefault.jpg');
+        webpics.push('https://lh3.googleusercontent.com/j1iKgcFIY8y3gdthzmF3zhtAi-Lo_vnD3jSwJWeKvro659Rc_MFH_J9qZV0poafNlp0=h900');
+        webpics.push('https://farm8.staticflickr.com/7251/26833509950_0dd8f0c153_c.jpg');
+        webpics.push('https://cdn.traileraddict.com/content/extra-thumbs/222840632-3.jpg');
+        webpics.push('https://bgrc.com.my/wp-content/uploads/sample1.jpg');
+        webpics.push('http://images.amcnetworks.com/amc.com/wp-content/uploads/2016/10/the-walking-dead-season-7-walkers-360-1200x707.jpg');
+        webpics.push('http://www.360tours.com.au/Hibiscus_Gardens_Sports_Complex/Thumbnails/NetballCourts.jpg');
+        webpics.push('http://www.bcom.ca/images_news/Ottawa_Ledge_Resto.jpg');
+        webpics.push('https://i.ytimg.com/vi/SQpA0L0ldxY/maxresdefault.jpg');
+        webpics.push('https://www.360rize.com/wp-content/uploads/2016/02/BillJacksStill-PSEdit1.jpg');
+        webpics.push('http://www.panoramiceye.com/wp-content/uploads/2017/05/venice-trees-1200x500-1200x500.jpg');
+        webpics.push('https://i2.wp.com/ivrpa.org/wp-content/uploads/2015/03/aerial-360-panorama-of-prague-by-airpano-13.jpg?fit=1200%2C400');
+        //    webpics.push(''); 
+
+        // Set to your device local folder
+        var padress = "/sdcard/DCIM/AccessoryCamera/360 CAM/";
+        var localpics = app.ListFolder(padress, ".jpg");
+        for (i = 0; i < localpics.length; i++) {
+            localpics[i] = padress + localpics[i];
+        }
+      
+        var gtx = null,
+            textol = null,
+            textor = null,
+            record = 0,
+            pics = [];
+        pics = webpics;//choose web pics as default
+//        pics = localpics;//choose local pics as default
+
+        var camera, scene, renderer, gap = 20,
+            count = 0,
+            opc = "",
+            scenegap = 2000;
+        var geometry, material, mesh, spherer = null,
+            spherel = null,
+            ok = true,
+            mode = "2d";
+        textureloader = new THREE.TextureLoader();
+        materiall = new THREE.MeshBasicMaterial({
+            map: textureloader.load(pics[0]),
+            //   map: textureloader.load('https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/09/Venice.Still001.jpeg'),
+
+            wireframe: false
+        });
+
+        materialr = new THREE.MeshBasicMaterial({
+            map: textureloader.load(pics[0]),
+            //      map: textureloader.load('https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/09/Venice.Still001.jpeg'),
+
+            wireframe: false
+        });
+        var sph = new THREE.SphereBufferGeometry(1200, 100, 100);
+        spherel = new THREE.Mesh(sph, materiall); // alert("ok"+sphere);
+        spherel.scale.x = -1;
+
+        spherer = new THREE.Mesh(sph, materialr);
+        spherer.scale.x = -1;
+        spherer.position.x = scenegap;
+        setTimeout(function(){
+        init();
+        animate();
+        },1000);
+
+        function init() {
+            app.SetScreenMode("Game");
+
+            speech = app.CreateSpeechRec("NoBeep,Parxtial");
+            speech.SetOnResult(speech_OnResult);
+            speech.SetOnError(speech_OnError);
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.x = gap;
+            camera2 = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+            camera2.position.x = -gap;
+
+            controls = new THREE.DeviceOrientationControls(camera);
+            controls2 = new THREE.DeviceOrientationControls(camera2);
+            scene = new THREE.Scene();
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            pi = Math.PI;
+            scene.add(spherel);
+            scene.add(spherer);
+
+            cubeCamera1 = new THREE.CubeCamera(1, 10000, 256);
+            cubeCamera1.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter;
+            scene.add(cubeCamera1);
+            cubeCamera2 = new THREE.CubeCamera(1, 10000, 256);
+            cubeCamera2.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter;
+            scene.add(cubeCamera2);
+            mtex = new THREE.MeshBasicMaterial({
+
+                envMap: cubeCamera1.renderTarget.texture
+            });
+
+            var loader = new THREE.FontLoader();
+
+            loader.load('Misc/optimer_regular.typeface.json', function(font) {
+
+                gtx = new THREE.TextBufferGeometry('DS & Threejs->LJL Apps...', {
+                    font: font,
+                    size: 130,
+                    height: 36,
+                    curveSegments: 6,
+                    bevelEnabled: true,
+                    bevelThickness: 3,
+                    bevelSize: 4,
+                    bevelSegments: 2
+                });
+                gtx.scale(.5, 1, 1);
+                textol = new THREE.Mesh(gtx, mtex);
+
+                //textol = new THREE.Mesh(new THREE.BoxBufferGeometry(30,60,3), mtex);                  
+
+                textor = new THREE.Mesh(gtx, mtex);
+                //  textor = new THREE.Mesh(new THREE.BoxBufferGeometry(30,60,3), mtex);                  
+
+                scene.add(textol);
+                scene.add(textor);
+            });
+
+            animate();
+            setTimeout(function() {
+                app.TextToSpeech("hi nice to have you here, what can I do fo you?", 1, 1, Listen)
+            }, 2000);
+        }
+
+        function settx(font) {
+
+            gt = new THREE.TextGeometry("DroidScript ThreeJs", {
+                font: font,
+                size: 100,
+                height: 8,
+                curveSegments: 6,
+                bevelEnabled: true,
+                bevelThickness: 3,
+                bevelSize: 4,
+                bevelSegments: 2
+            });
+            return gt;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (spherer != null && spherel != null && ok) render();
+        }
+
+        function render() {
+            var time = Date.now();
+            /*           if (mode === "2d" && opc === "next") {
+                           opc = "";
+                       } else {
+                           opc = "";
+                       }
+                       if (mode === "2d" && opc === "back") {
+                           opc = "";
+                       } else {
+                           opc = "";
+
+                       }
+                       */
+            if (opc === "exit") {
+                app.Exit()
+            };
+            if (opc === "back") {
+
+                if (pics.length > 0 && record > 0) {
+                    record--;
+                    materiall.map = textureloader.load(pics[record]);
+                    materialr.map = textureloader.load(pics[record]);
+                    if (record < 0) record = pics.length - 1;
+                }
+
+                opc = "";
+            }
+            if (opc === "next") {
+
+                if (pics.length > 0 && record < pics.length) {
+                    record++;
+                    materiall.map = textureloader.load(pics[record]);
+                    materialr.map = textureloader.load(pics[record]);
+                    if (record >= pics.length) record = 0;
+                }
+
+                opc = "";
+
+            }
+            if (opc === "web photos") {
+                pics = webpics;
+                record = 0;
+                materiall.map = textureloader.load(pics[record]);
+                materialr.map = textureloader.load(pics[record]);
+                opc = "";
+
+            }
+            if (opc === "local photos") {
+                pics = localpics;
+                record = 0;
+                materiall.map = textureloader.load(pics[record]);
+                materialr.map = textureloader.load(pics[record]);
+                opc = "";
+
+            }
+            if (opc === "any photo") {
+                record = (Math.random() * pics.length)
+                    .toFixed(0);
+                materiall.map = textureloader.load(pics[record]);
+                materialr.map = textureloader.load(pics[record]);
+                opc = "";
+            }
+
+            if (textol != null && textor != null) {
+                textol.position.x = Math.cos(time * 0.0002) * 580;
+                //	textol.position.y = Math.sin( time * 0.0001 ) * 60;
+                textol.position.z = Math.sin(time * 0.0003) * 580;
+                textol.rotation.x += 0.005;
+                textor.position.x = textol.position.x + scenegap;
+                textor.position.y = textol.position.y;
+                textor.position.z = textol.position.z;
+                textor.rotation.x = textol.rotation.x;
+            }
+            controls.update();
+            controls2.update();
+            camera.position.x = Math.sin(controls.alpha) * gap * Math.sign(controls.gamma); //*Math.sign(3.1416-controls.alpha);
+            camera.position.z = Math.cos(controls.alpha) * gap * Math.sign(controls.gamma); //*Math.sign(3.1416-controls.alpha);
+            camera2.position.x = scenegap + camera.position.x * -1;
+            camera2.position.z = camera.position.z * -1;
+            if (controls.alpha > pi / 2 && controls.alpha < pi * 1.5 && controls.gamma < 0) { //
+                if (spherer !== null) spherer.position.x = 0;
+                if (spherel != null) spherel.position.x = scenegap;
+            } else {
+                if (controls.gamma < 0) { //   app.ShowPopup(sceneloc);
+                    if (spherer !== null) spherer.position.x = scenegap;
+                    if (spherel != null) spherel.position.x = 0;
+                }
+            }
+
+            renderer.setViewport(0, 0, window.innerWidth / 2, window.innerHeight);
+            renderer.setScissor(0, 0, window.innerWidth / 2, window.innerHeight);
+            renderer.setScissorTest(true);
+            camera.aspect = (window.innerWidth / 2) / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.render(scene, camera);
+
+            renderer.setViewport(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
+            renderer.setScissor(window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
+            renderer.setScissorTest(true);
+            camera2.aspect = (window.innerWidth / 2) / window.innerHeight;
+            camera2.updateProjectionMatrix();
+            renderer.render(scene, camera2);
+
+            // pingpong
+            if (count % 2 === 0) {
+                mtex.envMap = cubeCamera1.renderTarget //.texture;
+                cubeCamera2.update(renderer, scene);
+            } else {
+                mtex.envMap = cubeCamera2.renderTarget //.texture;
+                cubeCamera1.update(renderer, scene);
+            }
+            count++;
+
+        }
+
+        function Listen() {
+            app.HideProgress();
+            speech.Recognize();
+        }
+
+        //Called with the recognition result(s).
+        function speech_OnResult(results, partial) {
+            //checar
+            var cmd = results[0].toLowerCase();
+            opc = cmd;
+            if (opc === "okay") ok = true;
+            if (opc === "stop") ok = false;
+            //I try left but the device reads "lyft"
+            if (opc === "open lyft") addleftpic();
+            if (opc === "open right") addrightpic();
+
+            //   STILL WORKING ON...
+            if (opc === "mode 3d") {
+                //               var f=padress;
+                ok = false;
+                texturel = new THREE.TextureLoader()
+                    .load(f);
+                material = new THREE.MeshBasicMaterial({
+
+                    map: texturel,
+                    wireframe: false
+                });
+                scene.background = texturel;
+
+                spherel = new THREE.Mesh(sph, material); // alert("ok"+sphere);
+                spherel.scale.x = -1;
+                scene.add(spherel);
+                //   app.ShowPopup("Choose Right Picture");
+
+            }
+            if (opc === "mode 2d") {
+
+            } else if (cmd.indexOf("exit") > -1) app.Exit();
+
+            //Restart recognition.
+            else speech.Recognize();
+            app.ShowPopup(cmd);
+
+        }
+
+        //Called if recognition fails.
+        function speech_OnError(error) {
+            console.log("Error" + error);
+
+            //Restart recognition.
+            if (!speech.IsListening()) speech.Recognize();
+        }
+
+        function addleftpic() {
+            f = app.ChooseFile("Choose a pic", "",
+                function(f) {
+                    materiall.map = textureloader.load(f);
+                    app.SetScreenMode("Game");
+                })
+
+        }
+
+        function addrightpic() {
+            f = app.ChooseFile("Choose a pic", "",
+                function(f) {
+                    materialr.map = textureloader.load(f);
+                    app.SetScreenMode("Game");
+                })
+
+        }
+
+    </script>
+
+</html>

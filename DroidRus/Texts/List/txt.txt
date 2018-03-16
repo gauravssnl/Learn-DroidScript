@@ -1,0 +1,34 @@
+<b>Список</b>
+app.CreateList( пункты списка, ширина, высота, опции ) - создаёт список<div class="block"><b>Опции:</b>
+OrangeButton
+WhiteGrad
+Menu</div>
+
+<b>Особые методы:</b>
+AddItem(Заголовок, соодержание, изображение)
+GetList(ограничитель) - получает список
+RemoveItem(заголовок)
+
+<div class="block">
+<b>Устанавливает:</b>
+SelectItem(имя, заголовок, пролистать к) - выделяет элемент
+SelectItemByIndex(индекс, пролистать) - выделяет элемент по индексу
+SetEllipsize1(режим) - обрезка текста 1
+SetEllipsize2(режим) - обрезка текста 2
+   Режим:
+start
+middle
+end
+SetHiTextColor1(colorCode) - цвет hi текста
+SetHiTextColor2(colorCode) - цвет hi текста
+SetDivider(ширина, цвет) - разделитель
+SetItem(заголовок, новый заголовок, новое соодержание, новое изображение)
+SetList(список, ограничитель)
+SetTextColor1(colorCode)
+SetTextColor2(colorCode)
+SetTextMargins(слева, сверху, справа, снизу) - отступы текста
+SetTextShadow1(радиус, dx, dy, цвет) - тень текста 1
+SetTextShadow2(радиус, dx, dy, цвет) - тень текста 2
+</div>
+
+ScrollToItem(имя, соодержание) - пролистать
