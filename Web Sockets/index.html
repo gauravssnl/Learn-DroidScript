@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>WebSocket Demo</title>
+
+    <script src="Html/velocity.min.js"></script>
+</head>
+
+<script>
+    var count = 10;
+    
+    //Connect to server via web sockets.
+    function Connect()
+    {
+    	//Check web sockets are supported.
+    	if (!window.WebSocket) 
+    	{
+    		alert("WebSocket not supported by this browser");
+    		return;
+    	}
+    	
+    	//Open web socket.
+    	ws = new WebSocket( "ws://"+window.location.host );
+    	ws.onopen = ws_onopen;
+    	ws.onmessage = ws_onmessage;
+    	ws.onclose = ws_onclose;
+    	ws.onerror = ws_onerror;
+    }
+    
+    //Send a message to the server.
+    function Send()
+    {
+    	ws.send( "Go " + count++ );
+    }
+    
+    //Handle messages from phone.
+    function ws_onmessage( msg ) 
+    {
+    	info.innerHTML = msg.data;
+    	
+    	if( parseInt(msg.data) == 0 ) 
+    	{ 
+    	    Velocity( img, {top:-3000}, 900,"easeInExpo" );
+    	    Velocity( img, {top:600,left:300,rotateZ:"540deg"}, 1500, "linear" );
+    	}
+    }
+    
+    //Websocket callbacks.
+    function ws_onopen() { info.innerHTML = "Socket Open"; }
+    function ws_onclose() { info.innerHTML = "Socket Closed"; }
+    function ws_onerror(e) { info.innerHTML = "Socket Error: " + e.data; }
+</script>
+
+<style>
+    body {  
+        font: 1.5em Helvetica, Arial, sans-serif;
+        text-align: center;
+    }
+    #img { position: relative; margin-top:10%; }
+</style>
+
+<body onload="Connect()">
+    <br>
+    <h2>Web Server Demo</h2>
+    
+    <img id="img" src="Img/rocket.svg" width="10%">
+    
+    <br><br>
+    <div id="info">Ready</div>
+    <br><br>
+    <button onclick="Send()">Send Message to Server</button>
+</body>
+</html>

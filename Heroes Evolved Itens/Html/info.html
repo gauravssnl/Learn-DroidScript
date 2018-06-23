@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+</head>
+	
+<style>
+	body { background-color: #004866;
+float: center;
+ }
+	
+    .info { 
+        font-size: 20;
+        width: 100%;
+        margin-top: 10%;
+        text-align: center;
+        color: white;
+    }
+    button{
+    	margin-top:10px;
+        width: 40%;
+        height: 10%;
+        font-size: 20px;
+        color: white;
+        background-color: #0071BA;
+    }
+    #borda{
+    	padding:10px;
+    	border: 2px solid #25C500;
+    
+    }
+</style>
+
+<body>
+	<div class=info>
+	<b>Este Aplicativo faz parte do Conjunto de Aplicativos do Heroes Evolved Wiki que fornece informações interessantes ao usuário de acordo com o Assunto do Aplicativo como<br><br><div id="borda">
+		<img src="https://hefiles.000webhostapp.com/ajuda/app_/imgs/heitens.png" width="70px" height="70px"/><br>Heroes Evolved Itens<br><button id="dld" onclick="itens()"><b>DOWNLOAD</b></button><br></div><br>
+		<div id="borda"><img src="https://hefiles.000webhostapp.com/ajuda/app_/imgs/herunas.png" width="70px" height="70px"/><br>Heroes Evolved Runas<br><button id="dld" onclick="runas()"><b>DOWNLOAD</b></button><br></div><br>
+		<div id="borda"><img src="https://hefiles.000webhostapp.com/ajuda/app_/imgs/heherois.png" width="0px" height="0px"/><br>Heroes Evolved Heróis (Em Breve)</div>
+	</div>
+</body>
+<script>
+	function itens(){
+		location.href="https://hefiles.000webhostapp.com/ajuda/app_/update_itens.php";
+		}
+		function runas(){
+		location.href="https://hefiles.000webhostapp.com/ajuda/app_/update_runas.php";
+		}
+	</script>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+	
+<script>
+    //Called after application is started.
+    function OnStart()
+    {
+        var version = app.GetOSVersion();
+        idVersion.innerHTML = version;
+    }
+</script>
+
+<style>
+	body { background-color: #ffffff; }
+	div {  text-align: center; }
+    .txt1 { font-size: 22; margin-top: 1em; color: gray; }
+    .txt2 { font-size: 32; margin-top: 1em; color: gray; }
+</style>
+
+<body onload="app.Start()">
+
+    <div>
+        <img style="margin-top: 3em;" src="Img/android.png" width=30%>
+    	<div class=txt1> Android Version</div>
+    	<div id=idVersion class=txt2></div>
+	</div>
+	
+</body>
+</html>

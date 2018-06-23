@@ -1,0 +1,1 @@
+0|250|Schließe ein Level ab ohne Münzen zu sammeln!|n&&(items[1].count+items[3].count)==0

@@ -1,0 +1,12 @@
+"choose": {
+	"title": "Actions",
+	"edit": "Edit",
+	"rename": "Rename",
+	"copy": "Create a copy",
+	"delete": "Delete",
+	"shortcut": "Create shortcut",
+	"spk": "Create SPK",
+	"apk": "Create APK",
+	"icon": "Set icon"
+},
+"exit": "Exit?"

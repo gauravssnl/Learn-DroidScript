@@ -1,0 +1,14 @@
+"menu": {
+	"new": "New project",
+	"plugins": "Plugins",
+	"settings": "Settings",
+	"demos": "Demos",
+	"news": "News",
+	"premium": "Premium",
+	"sdk": "SDK",
+	"shop": "Shop",
+	"about": "About"
+},
+"yes": "Yes",
+"no": "No",
+"taken": "The name is already taken"

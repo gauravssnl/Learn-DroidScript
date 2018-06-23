@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="271043961667-mlno6olbrhpna9e7a51fose4e1qg44km.apps.googleusercontent.com">
+</head>
+	
+<script>
+    //Called after application is started.
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  SendMessage('ID : ' + profile.getId() + "\n");
+  SendMessage('Name: ' + profile.getName()+ "\n");
+  SendMessage('Image URL: ' + profile.getImageUrl()+ "\n");
+  SendMessage('Email: ' + profile.getEmail()+ "\n");
+  SendMessage('quit');
+  
+}
+    function OnStart()
+    {
+    
+        app.ShowPopup( "HTML Rocks!" );
+    }
+    
+    function SendMessage( msg )
+	{
+		var httpRequest = new XMLHttpRequest();
+		httpRequest.onreadystatechange = function() { HandleReply(httpRequest); };  
+		httpRequest.open("GET", "/message?msg=" + msg, true);
+		httpRequest.send(null);
+	}
+
+	function HandleReply( httpRequest )
+	{
+		if( httpRequest.readyState==4 ) 
+		{
+			if( httpRequest.status==200 ) txt.innerHTML = httpRequest.responseText;
+			else txt.innerHTML = "Error: " + httpRequest.status + " " +  httpRequest.responseText;
+		}
+	}
+</script>
+
+<style>
+	body { background-color: #ffffff; }
+    .hello 
+    { 
+        font-size: 42; 
+        width: 100%;
+        margin-top: 2em;
+        text-align: center;
+        color: blue;
+    }
+</style>
+
+<body onload="app.Start()">
+
+	<div class=hello> Hello World! </div>
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+</body>
+</html>

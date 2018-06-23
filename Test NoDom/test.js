@@ -1,0 +1,1 @@
+function IncrementGlobal2() { glob2 += 1; }

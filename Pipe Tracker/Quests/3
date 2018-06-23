@@ -1,0 +1,1 @@
+0|500|Schließe ein Level ab ohne positive Effekte zu sammeln!|n&&(items[2].count+items[4].count)==0

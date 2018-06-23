@@ -1,0 +1,1 @@
+0|500|Schließe ein Level ab ohne etwas einzusammeln!|n&&(items[0].count+items[1].count+items[2].count+items[3].count+items[4].count)==0

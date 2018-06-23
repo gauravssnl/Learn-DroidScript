@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width"> 
+	<title>Gauge Test</title>
+	<script src="Html/gauge.js"></script>
+	<style>body{padding:0;margin:0;background:#222}</style>
+	
+	<script>
+	function DrawGauge() 
+	{
+				
+		gauge = new Gauge({
+			renderTo    : 'gauge',
+			width       : document.body.clientWidth,
+			height      : document.body.clientHeight,
+			glow        : true,
+			units       : '°C',
+			title       : 'Temperature',
+			minValue    : -50,
+			maxValue    : 50,
+			majorTicks  : ['-50','-40','-30','-20','-10','0','10','20','30','40','50'],
+			minorTicks  : 10,
+			strokeTicks : false,
+			highlights  : [
+				{ from : -50, to : 0, color : 'rgba(0,   0, 255, .3)' },
+				{ from : 0, to : 50, color : 'rgba(255, 0, 0, .3)' }
+			],
+			colors      : {
+				plate      : '#f5f5f5',
+				majorTicks : '#000',
+				minorTicks : '#222',
+				title      : '#222',
+				units      : '#666',
+				numbers    : '#222',
+				needle     : { start : 'rgba(240, 128, 128, 1)', end : 'rgba(255, 160, 122, .9)' }
+			},
+			animation : {
+				delay : 25,
+				duration: 500,
+				fn : 'bounce'
+			}
+		});
+
+		gauge.draw();
+	};	
+	</script>
+	
+</head>
+<body style="background-color:black;">
+	<canvas id="gauge"></canvas>
+	<div id="console"></div>
+	<script>
+		DrawGauge();
+	</script>
+
+</html>

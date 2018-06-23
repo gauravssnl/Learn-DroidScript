@@ -1,0 +1,121 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset='utf-8'>  
+    <meta name='viewport' content='width=device-width,user-scalable=no' />
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+</head> 
+
+<script src='file:///android_asset/app.js'></script>
+<script>_app = app</script>
+<script src="Html/box2dweb.min.js"></script>
+<script src="Html/booty5.min.js"></script>
+<script src="Html/b5extra.js"></script>
+	
+<script>
+//Lock screen orientation to Portrait.
+_app.SetOrientation( "Portrait" );
+</script>
+
+<script>
+window.onload = function()
+{
+    //Create the app
+    var app = new b5.App(document.getElementById('gamecanvas'), false );
+    app.clear_canvas = true;
+    app.debug = true;
+    
+    //Tell Booty5 to scale canvas to best fit window
+    app.setCanvasScalingMethod( b5.App.FitX );
+
+    //Create a scene.
+    var scene = new b5.Scene();
+    scene.clip_children = false;
+    
+    //Add scene to the app and allow touch.
+    app.addScene(scene);
+	app.focus_scene = scene;
+    
+    //Init physics world and set gravity.
+    scene.initWorld( 0, 100, true );
+    
+    //Add a Ball actor.
+    var ball = new b5.Actor();
+    ball.x = 0; 
+    ball.y = -200;
+    ball.w = 200;
+    ball.h = 200;
+    ball.touchable = true;
+    scene.addActor(ball); 
+    
+    //Set ball image.
+    ball.bitmap = new b5.Bitmap("background", "Img/Ball.png", true);
+    
+    //Create a bouncy material.
+    var bouncy = new b5.Material("bouncy");
+    bouncy.type = "dynamic";
+    bouncy.density = 0.3;
+    bouncy.friction = 0.1;
+    bouncy.restitution = 0.8;
+    
+    //Add ball Physics.
+    ball.initBody("dynamic", false, false); 
+    ball.addFixture( {type:b5.Shape.TypeCircle, 
+            width:ball.w/2, material:bouncy} ); 
+         
+    //Set initial ball velocity.   
+    var b2Vec2 = Box2D.Common.Math.b2Vec2;
+    ball.body.SetLinearVelocity( new b2Vec2(2,0) );
+    ball.body.SetAngularVelocity( 1.5 );
+
+    //Add a Ground actor.
+    var ground = new b5.PolygonActor();
+    ground.name = "polygon1";
+    ground.points = [-200,500, 200,500, 200,540, -200,540];    
+    ground.fill_style = "green";                
+    ground.filled = true;                         
+    scene.addActor( ground );       
+ 
+    //Create a hard material for ground.
+    var hard = new b5.Material("hard");
+    hard.type = "static";
+    hard.density = 1;
+    hard.friction = 0.5;
+    hard.restitution = 0.5;
+ 
+    //Add ground physics.
+    ground.initBody( "static", false, false ); 
+    ground.addFixture( { type:b5.Shape.TypePolygon, 
+        vertices:ground.points, material:hard } ); 
+    
+    //Load a 'bouncy' sound.
+    var poing = new b5.Sound("poing", "Snd/Poing.ogg", true );
+    
+    //Watch for ball collisions and play sound if detected.
+    ball.onCollisionStart = function( contact ) 
+    {
+        var actorA = contact.GetFixtureA().GetBody().GetUserData();
+        var actorB = contact.GetFixtureB().GetBody().GetUserData();
+        if( actorA==ground || actorB==ground ) poing.play();
+    };
+
+    //Handle user touching the ball.
+    ball.onBeginTouch = function(pos)
+    {
+        ball.body.SetLinearVelocity( new b2Vec2(0,-80) );
+        ball.body.SetAngularVelocity( -10 );
+        _app.Vibrate( "0,10" );
+    }
+    
+    //Start main loop
+    app.start();
+}
+</script>
+ 
+
+<body style="margin: 0 0; background-color:white">
+	<canvas id='gamecanvas' width='720' height='1280'>
+	</canvas>
+</body>  
+</html>

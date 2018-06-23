@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>snake</title>
+<link rel="stylesheet" href="style_snake.css">
+    <script src='file:///android_asset/app.js'></script>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+function OnResume(){
+		app.SetOrientation( "Portrait" );
+    app.SetScreenMode( "Game" );}
+</script>
+</head>
+<body id="bodyI" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" oncontextmenu="return false">
+<div id="bodyId">
+<div id="score">1</div>
+<div id="lastScore">0</div>
+</div>
+<div id="menu" class="menu notFilter"><div id="wrap" class="floatButton notFilter"><div id="divOne" class="notFilter"></div><div id="divTwo" class="notFilter"></div><div id="divThree" class="notFilter"></div></div></div>
+
+<script src="script_snake.js"></script>
+<script src="snakeObjekt.js"></script>
+<script src="createDivClass.js"></script>
+</body>
+</html>
